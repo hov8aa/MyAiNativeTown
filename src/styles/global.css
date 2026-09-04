@@ -1,0 +1,71 @@
+/* myainativetown.com — design tokens and base
+   Palette drawn from the region: sarson (mustard) is the only accent.
+   One bold move on this page: the empty answer-lines in the hero. */
+
+:root {
+  --paper:  #FCFBF7;
+  --ink:    #191712;
+  --muted:  #6B6559;
+  --rule:   #DCD6C6;
+  --sarson: #D4A017;
+  --sarson-deep: #A87B08;
+
+  --measure: 34rem;
+  --gap: clamp(3.5rem, 9vw, 6.5rem);
+
+  --display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --body: "Newsreader", Georgia, "Times New Roman", serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: clamp(1.0625rem, 0.4vw + 1rem, 1.1875rem);
+  line-height: 1.62;
+  font-optical-sizing: auto;
+}
+
+h1, h2, h3 {
+  font-family: var(--display);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.022em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+h2 { font-size: clamp(1.75rem, 3.4vw, 2.375rem); margin-bottom: 1.5rem; }
+h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); letter-spacing: -0.015em; }
+
+p { margin: 0 0 1.15em; max-width: var(--measure); }
+p:last-child { margin-bottom: 0; }
+
+strong { font-weight: 600; }
+em { font-style: italic; color: var(--muted); }
+
+a { color: inherit; text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--sarson-deep);
+  outline-offset: 3px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 46rem;
+  margin: 0 auto;
+  padding-inline: clamp(1.25rem, 5vw, 2.5rem);
+}
+
+section { padding-block: var(--gap); }
+
+.divider { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
