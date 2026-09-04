@@ -1,0 +1,75 @@
+<section id="register" class="register">
+  <div class="wrap">
+    <h2>Register</h2>
+
+    <dl class="facts">
+      <div><dt>Seats</dt><dd>20</dd></div>
+      <div><dt>Registration closes</dt><dd>17 September</dd></div>
+      <div><dt>Starts</dt><dd>21 September</dd></div>
+      <div><dt>Fee</dt><dd>₹500, non-refundable</dd></div>
+    </dl>
+
+    <p>
+      ₹500 is not the price of the program. It's the price of a seat that
+      nineteen other people wanted.
+    </p>
+
+    <!-- TODO: replace with the real form / payment link before 17 September -->
+    <a class="cta" href="#register">Registration link coming soon</a>
+
+    <p class="formq">
+      One question on the form: <em
+        >name one thing in Bhiwani or Hisar that nobody has written down.</em
+      >
+    </p>
+  </div>
+</section>
+
+<style>
+  .register { background: var(--ink); color: var(--paper); }
+  .register :global(h2) { color: var(--paper); }
+
+  .facts {
+    margin: 0 0 2rem;
+    display: grid;
+    gap: 0.9rem;
+    max-width: var(--measure);
+  }
+
+  .facts div {
+    display: grid;
+    grid-template-columns: 12rem 1fr;
+    gap: 0.75rem;
+    align-items: baseline;
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid rgba(252, 251, 247, 0.18);
+  }
+
+  .facts dt {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: rgba(252, 251, 247, 0.62);
+  }
+
+  .facts dd { margin: 0; }
+
+  .cta {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.85rem 2.25rem;
+    background: var(--sarson);
+    color: var(--ink);
+    font-family: var(--display);
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 2px;
+  }
+
+  .formq { margin-top: 2rem; color: rgba(252, 251, 247, 0.78); }
+  .formq :global(em) { color: var(--sarson); font-style: italic; }
+
+  @media (max-width: 30rem) {
+    .facts div { grid-template-columns: 1fr; gap: 0.1rem; }
+  }
+</style>
