@@ -1,0 +1,141 @@
+---
+const questions = [
+  "Which shop in Bhiwani opens late in Sawan.",
+  "Which mechanic in Hisar actually has the part today, and which one says three days and means two weeks.",
+  "Why the same quintal of mustard fetches one rate in Bhiwani and another in Hisar on the same morning.",
+  "Which coaching centre on that road still has the teacher whose name is painted on the board.",
+];
+---
+
+<section class="hero">
+  <div class="wrap">
+    <p class="opener">No AI model knows:</p>
+
+    <ol class="questions">
+      {questions.map((q) => (
+        <li>
+          <span class="q">{q}</span>
+          <span class="blank" aria-hidden="true"></span>
+        </li>
+      ))}
+    </ol>
+
+    <p class="turn">
+      Somebody here knows all four. None of it is written anywhere a machine
+      can read.
+    </p>
+
+    <p class="turn">
+      From 21 September to 19 November, three evenings a week, we are going to
+      write it down — and build something that can answer with it.
+    </p>
+
+    <p class="claim">You don't watch this happen. You'll build it.</p>
+
+    <a class="cta" href="#register">Register</a>
+
+    <dl class="facts">
+      <div><dt>Starts</dt><dd>21 September</dd></div>
+      <div><dt>Sessions</dt><dd>Three a week, live, plus building on the days between</dd></div>
+      <div><dt>Seats</dt><dd>20</dd></div>
+      <div><dt>Registration</dt><dd>₹500</dd></div>
+    </dl>
+  </div>
+</section>
+
+<style>
+  .hero { padding-top: clamp(3rem, 10vh, 6rem); }
+
+  .opener {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--muted);
+    margin-bottom: 1.75rem;
+  }
+
+  .questions {
+    list-style: none;
+    margin: 0 0 2.75rem;
+    padding: 0;
+  }
+
+  .questions li { margin-bottom: 2.25rem; max-width: 32rem; }
+
+  .q {
+    display: block;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 4.6vw, 2.25rem);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    text-wrap: pretty;
+  }
+
+  /* The one bold move: an answer line nobody has filled in. */
+  .blank {
+    display: block;
+    height: 1.6rem;
+    margin-top: 0.65rem;
+    border-bottom: 2px solid var(--sarson);
+  }
+
+  .questions li:nth-child(2) .blank { width: 78%; }
+  .questions li:nth-child(3) .blank { width: 64%; }
+  .questions li:nth-child(4) .blank { width: 88%; }
+
+  .turn { color: var(--muted); }
+
+  .claim {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-top: 2rem;
+  }
+
+  .cta {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.85rem 2.25rem;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.0625rem;
+    text-decoration: none;
+    border-radius: 2px;
+  }
+
+  .cta:hover { background: var(--sarson-deep); }
+
+  .facts {
+    margin: 3rem 0 0;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    gap: 0.9rem;
+    max-width: var(--measure);
+  }
+
+  .facts div {
+    display: grid;
+    grid-template-columns: 8.5rem 1fr;
+    gap: 0.75rem;
+    align-items: baseline;
+  }
+
+  .facts dt {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: var(--muted);
+  }
+
+  .facts dd { margin: 0; font-size: 1rem; }
+
+  @media (max-width: 26rem) {
+    .facts div { grid-template-columns: 1fr; gap: 0.1rem; }
+  }
+</style>
