@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import Hero from "../components/sections/Hero.astro";
+import Questions from "../components/sections/Questions.astro";
 import Building from "../components/sections/Building.astro";
 import NotJustACourse from "../components/sections/NotJustACourse.astro";
 import Tracks from "../components/sections/Tracks.astro";
@@ -13,21 +14,42 @@ import Closing from "../components/sections/Closing.astro";
 
 <Base
   title="AI Agent Training Program — Bhiwani / Hisar"
-  description="Three evenings a week, 21 September to 19 November. Learn to build AI agents by building a real one for this region. 20 seats."
+  description="Three live sessions a week, 21 September to 19 November. Learn to build AI agents by building one real town agent for Bhiwani and Hisar. 20 seats, ₹500."
 >
   <Hero />
-  <hr class="divider" />
-  <Building />
-  <hr class="divider" />
-  <NotJustACourse />
-  <hr class="divider" />
+  <Questions />
+  <section id="building" class="row-building">
+    <div class="wrap grid-2">
+      <Building />
+      <NotJustACourse />
+    </div>
+  </section>
   <Tracks />
-  <hr class="divider" />
-  <Format />
-  <hr class="divider" />
-  <Outcomes />
-  <hr class="divider" />
-  <DontJoin />
+  <section id="format" class="row-format">
+    <div class="wrap grid-3">
+      <Format />
+      <Outcomes />
+      <DontJoin />
+    </div>
+  </section>
   <Register />
   <Closing />
 </Base>
+
+<style>
+  .row-building { background: var(--surface-canvas); }
+  .row-format { background: var(--surface-canvas); }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 48px;
+    align-items: start;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 24px;
+  }
+</style>

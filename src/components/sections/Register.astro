@@ -1,75 +1,99 @@
+---
+import Button from "../Button.astro";
+import Field from "../Field.astro";
+
+const fee = "₹500";
+const payHref = "#pay";
+const heroCta = `Pay ${fee} — hold a seat`;
+const trackOptions = [
+  { value: "a", label: "Track A — foundations, and you build" },
+  { value: "b", label: "Track B — you own a layer and ship it" },
+  { value: "unsure", label: "Not sure yet — help me pick" },
+];
+---
+
 <section id="register" class="register">
-  <div class="wrap">
-    <h2>Register</h2>
+  <div class="wrap grid-2">
+    <div>
+      <p class="eyebrow">Register</p>
+      <h2>20 seats. <span class="gold">Ek hi cohort.</span></h2>
+      <p class="lead">
+        {fee} holds your seat, non-refundable. It is deliberately small and
+        deliberately not zero &mdash; it is the first filter, and it is the
+        only one you pay for.
+      </p>
+      <div class="steps">
+        <p><span class="num">1</span>Pay {fee} and fill this in &mdash; both, or the seat does not hold.</p>
+        <p><span class="num">2</span>I reply within two working days with your track and the joining link.</p>
+        <p><span class="num">3</span>Registration closes 17 September. Cohort starts 21 September.</p>
+      </div>
+      <p class="footnote">
+        Questions before you pay? Write to me and say which track you are
+        looking at. Vague inputs get vague replies.
+      </p>
+    </div>
 
-    <dl class="facts">
-      <div><dt>Seats</dt><dd>20</dd></div>
-      <div><dt>Registration closes</dt><dd>17 September</dd></div>
-      <div><dt>Starts</dt><dd>21 September</dd></div>
-      <div><dt>Fee</dt><dd>₹500, non-refundable</dd></div>
-    </dl>
-
-    <p>
-      ₹500 is not the price of the program. It's the price of a seat that
-      nineteen other people wanted.
-    </p>
-
-    <!-- TODO: replace with the real form / payment link before 17 September -->
-    <a class="cta" href="#register">Registration link coming soon</a>
-
-    <p class="formq">
-      One question on the form: <em
-        >name one thing in Bhiwani or Hisar that nobody has written down.</em
-      >
-    </p>
+    <div class="card card-gold">
+      <form class="form">
+        <div class="field-row">
+          <Field id="name" label="Your name" placeholder="Hari Om" />
+          <Field id="phone" label="WhatsApp number" placeholder="98xxxxxxxx" />
+        </div>
+        <Field id="place" label="College or company" placeholder="TIT&S Bhiwani" />
+        <Field id="track" label="Which track" as="select" options={trackOptions} />
+        <Field
+          id="thing"
+          label="What would you point an agent at first?"
+          as="textarea"
+          placeholder="The shop, clinic or office you already know from the inside."
+        />
+        <div class="actions">
+          <Button size="lg" href={payHref}>{heroCta}</Button>
+          <p class="fine">Opens the payment page. Non-refundable, and there is no waitlist once twenty are in.</p>
+        </div>
+      </form>
+    </div>
   </div>
 </section>
 
 <style>
-  .register { background: var(--ink); color: var(--paper); }
-  .register :global(h2) { color: var(--paper); }
+  .register { background: var(--surface-page); }
 
-  .facts {
-    margin: 0 0 2rem;
+  .grid-2 {
     display: grid;
-    gap: 0.9rem;
-    max-width: var(--measure);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 56px;
+    align-items: start;
   }
 
-  .facts div {
-    display: grid;
-    grid-template-columns: 12rem 1fr;
-    gap: 0.75rem;
-    align-items: baseline;
-    padding-bottom: 0.9rem;
-    border-bottom: 1px solid rgba(252, 251, 247, 0.18);
+  h2 { margin: 0 0 20px; }
+  .lead { font-size: 1.0625rem; line-height: 1.55; margin: 0 0 28px; max-width: 46ch; }
+
+  .steps { display: grid; gap: 14px; margin-bottom: 28px; }
+  .steps p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.55;
+    color: var(--text-body);
+    padding-left: 26px;
+    position: relative;
+    max-width: none;
+  }
+  .steps .num { position: absolute; left: 0; top: 0; color: var(--gold-300); font-weight: 600; }
+
+  .footnote {
+    padding-top: 24px;
+    border-top: 1px solid var(--border-hairline);
+    font-size: 0.875rem;
+    color: var(--text-subtle);
+    line-height: 1.55;
+    margin: 0;
+    max-width: none;
   }
 
-  .facts dt {
-    font-family: var(--display);
-    font-weight: 500;
-    font-size: 0.9375rem;
-    color: rgba(252, 251, 247, 0.62);
-  }
+  .form { display: grid; gap: 20px; }
+  .field-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 20px; }
 
-  .facts dd { margin: 0; }
-
-  .cta {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.85rem 2.25rem;
-    background: var(--sarson);
-    color: var(--ink);
-    font-family: var(--display);
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: 2px;
-  }
-
-  .formq { margin-top: 2rem; color: rgba(252, 251, 247, 0.78); }
-  .formq :global(em) { color: var(--sarson); font-style: italic; }
-
-  @media (max-width: 30rem) {
-    .facts div { grid-template-columns: 1fr; gap: 0.1rem; }
-  }
+  .actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .actions .fine { font-size: 0.75rem; color: var(--text-faint); margin: 0; max-width: 34ch; line-height: 1.32; }
 </style>

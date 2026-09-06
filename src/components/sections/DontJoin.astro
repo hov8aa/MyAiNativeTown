@@ -1,54 +1,22 @@
 ---
 const reasons = [
-  "You want a certificate more than a working thing.",
-  "You want the recording. There isn't one.",
-  "You want to be taught. This is closer to being handed a piece and expected to carry it.",
-  "Three hours in the room, and the hours outside it, every week until mid-November, is not something you can actually give.",
+  "you want a certificate more than a working thing.",
+  "you cannot make three fixed evenings a week for nine weeks.",
+  "you expect to be handed the goal instead of chasing it between sessions.",
+  "you need the recording, because there isn’t one.",
 ];
 ---
 
-<section class="dontjoin">
-  <div class="wrap">
-    <h2>Don't join if</h2>
-    <ul>
-      {reasons.map((r) => <li>{r}</li>)}
-    </ul>
-    <p class="close">
-      I'd rather have four people still in the room in November than forty who
-      registered in September.
-    </p>
+<div class="card card-inset dontjoin">
+  <p class="eyebrow">Don&rsquo;t join if</p>
+  <h3>Yeh aapke liye nahi hai, agar &mdash;</h3>
+  <div class="lines">
+    {reasons.map((r) => <p>{r}</p>)}
   </div>
-</section>
+</div>
 
 <style>
-  .dontjoin ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    max-width: var(--measure);
-  }
-
-  .dontjoin li {
-    padding: 0.9rem 0 0.9rem 1.75rem;
-    border-bottom: 1px solid var(--rule);
-    position: relative;
-  }
-
-  .dontjoin li::before {
-    content: "\00d7";
-    position: absolute;
-    left: 0;
-    top: 0.85rem;
-    color: var(--sarson-deep);
-    font-size: 1.15rem;
-    line-height: 1.4;
-  }
-
-  .close {
-    margin-top: 2rem;
-    font-family: var(--display);
-    font-weight: 500;
-    font-size: 1.0625rem;
-    line-height: 1.5;
-  }
+  .dontjoin h3 { margin: 0 0 20px; }
+  .lines { display: grid; gap: 12px; }
+  .lines p { margin: 0; font-size: 0.9375rem; line-height: 1.55; max-width: none; }
 </style>

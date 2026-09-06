@@ -1,24 +1,32 @@
+---
+import Button from "../Button.astro";
+
+const payHref = "#pay";
+const heroCta = "Pay ₹500 — hold a seat";
+---
+
 <section class="closing">
   <div class="wrap">
-    <p>
-      The town knows things no model does. Which shop opens late in Sawan.
-      Whose price moves when the mandi shifts.
+    <p class="eyebrow">Before you decide</p>
+    <p class="statement">
+      You will spend nine weeks pushing a real thing into a town that did not
+      ask for it. <span class="gold">Most of it will resist.</span>
     </p>
-    <p>We're going to write that down.</p>
-    <p class="last">Most of it will resist.</p>
+    <Button size="lg" href={payHref}>{heroCta}</Button>
   </div>
 </section>
 
 <style>
-  .closing p {
-    font-family: var(--display);
-    font-weight: 500;
-    font-size: clamp(1.2rem, 2.8vw, 1.6rem);
-    line-height: 1.34;
-    letter-spacing: -0.018em;
-    max-width: 30rem;
-    margin-bottom: 1rem;
-  }
+  .closing { padding: 80px 24px; }
+  .closing .wrap { max-width: 900px; text-align: center; }
 
-  .last { color: var(--sarson-deep); font-weight: 700; }
+  .statement {
+    margin: 0 0 32px;
+    font-size: clamp(1.75rem, 3.4vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1.16;
+    letter-spacing: -0.02em;
+    color: var(--text-heading);
+    max-width: none;
+  }
 </style>
