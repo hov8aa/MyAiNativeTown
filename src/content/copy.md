@@ -15,16 +15,16 @@ Bracketed items are still open.
 - Three live sessions a week; building and self-learning on the other days.
 - Track A builds too — small, useful agents.
 - Fee: ₹500, non-refundable.
+- Days: Monday, Wednesday, Friday — 26 sessions in all.
+- Homework is scoped to a goal, not a number of hours.
+- The cohort does not pause for Diwali; sessions run 6–10 November as usual.
 
 **Still open**
 
-1. **Which three days.** The page needs the actual days before it can take a rupee.
-2. **The homework hours.** The "Don't join if" section is vague about the real
-   weekly ask. That number is the most load-bearing thing on the page — it's
-   what people will hold us to in October.
-3. **The form and payment link.** A static page cannot take ₹500. Needs a
+1. **The form and payment link.** A static page cannot take ₹500. Needs a
    Razorpay page or UPI plus a form. This is the critical path, not the site.
-4. **What Track A's "one real thing" is scoped to.** Deliberately loose in the
+   The page's pay button currently points at a placeholder `#pay`.
+2. **What Track A's "one real thing" is scoped to.** Deliberately loose in the
    copy; cannot stay loose in the room.
 
 **Flagged**

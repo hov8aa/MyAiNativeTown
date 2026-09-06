@@ -1,18 +1,37 @@
-<section>
-  <div class="wrap">
-    <h2>This is not just a course</h2>
-    <p>
-      Nobody has recorded these lessons. There is no finished version of this
-      sitting on a hard drive.
-    </p>
-    <p>
-      We will build the town agents live, in the same hour you're in the room.
-      When it breaks, it breaks in front of you. When I don't know something,
-      you'll watch me not know it.
-    </p>
-    <p>
-      The build is not a teaching prop. It's real work that happens to have an
-      audience. That's the whole method.
-    </p>
+---
+const points = [
+  "No pre-recorded videos. Every session is live, and it is the same room every time.",
+  "Homework is set against a goal, not a number of hours. You are done when the thing works.",
+  "The build log is public. Your work is visible to anyone who reads it — including the next employer.",
+  "The cohort does not pause for Diwali. Sessions run 6–10 November as usual.",
+];
+---
+
+<div class="card notcourse">
+  <p class="eyebrow">Not just a course</p>
+  <h3>There is no certificate at the end. There is a thing that runs.</h3>
+  <div class="points">
+    {points.map((p) => <p class="point">{p}</p>)}
   </div>
-</section>
+</div>
+
+<style>
+  .notcourse h3 { margin: 0 0 20px; }
+  .points { display: grid; gap: 14px; }
+  .point {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.55;
+    color: var(--text-muted);
+    padding-left: 18px;
+    position: relative;
+    max-width: none;
+  }
+  .point::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--gold-400);
+  }
+</style>

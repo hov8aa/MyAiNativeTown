@@ -1,41 +1,61 @@
-<section>
-  <div class="wrap">
-    <h2>What we're building</h2>
-    <p>Two things, at the same time.</p>
+---
+const layers = [
+  {
+    tag: "Layer 01 · Sessions 1–8",
+    text: "The category walk. What the town actually asks for, written down before any model is touched.",
+    accent: "var(--gold-400)",
+  },
+  {
+    tag: "Layer 02 · Sessions 9–18",
+    text: "Tools, data and guardrails. The first wrong answer arrives here, and we keep it.",
+    accent: "var(--gold-500)",
+  },
+  {
+    tag: "Layer 03 · Sessions 19–26",
+    text: "Into a real workflow, in one real shop or clinic. It moved the number, or it did not.",
+    accent: "var(--gold-600)",
+  },
+];
+---
 
-    <div class="thing">
-      <h3>An AI agent for this region</h3>
-      <p>
-        Starting with one category of local business. A working system, not a
-        demo. It will know real things about real shops, and it will be
-        confidently wrong about a business three streets away — and we will
-        have to find out why.
-      </p>
-    </div>
-
-    <div class="thing">
-      <h3>AI agent builders</h3>
-      <p>
-        From Bhiwani and Hisar. That is the second output, and possibly the
-        more important one.
-      </p>
-    </div>
-
-    <p class="admission">
-      We don't know yet if there's enough talent in town. Let's find out
-      together.
-    </p>
+<div class="building">
+  <p class="eyebrow">What we&rsquo;re building</p>
+  <h2>One town agent, <span class="gold">teen layers mein</span>.</h2>
+  <p class="deck">
+    Not nine demos. One agent for this district, built layer by layer in
+    front of you, with every wrong answer logged where you can read it.
+  </p>
+  <div class="layers">
+    {layers.map((layer) => (
+      <div class="layer" style={`border-left-color:${layer.accent}`}>
+        <p class="tag">{layer.tag}</p>
+        <p class="text">{layer.text}</p>
+      </div>
+    ))}
   </div>
-</section>
+</div>
 
 <style>
-  .thing { margin-block: 2rem; }
-  .thing h3 { margin-bottom: 0.65rem; }
+  .building h2 { margin: 0 0 20px; }
+  .deck { font-size: 1.0625rem; line-height: 1.55; margin: 0 0 24px; max-width: 48ch; }
 
-  .admission {
-    margin-top: 2.5rem;
-    padding-left: 1.25rem;
-    border-left: 3px solid var(--sarson);
-    font-size: 1.0625em;
+  .layers { display: grid; gap: 12px; }
+
+  .layer {
+    background: var(--surface-inset);
+    border-left: 3px solid;
+    border-radius: 14px;
+    padding: 16px 20px;
   }
+
+  .tag {
+    margin: 0 0 4px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-300);
+  }
+
+  .text { margin: 0; font-size: 1rem; color: var(--text-body); line-height: 1.55; max-width: none; }
 </style>

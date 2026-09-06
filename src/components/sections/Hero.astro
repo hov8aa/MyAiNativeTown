@@ -1,141 +1,85 @@
 ---
-const questions = [
-  "Which shop in Bhiwani opens late in Sawan.",
-  "Which mechanic in Hisar actually has the part today, and which one says three days and means two weeks.",
-  "Why the same quintal of mustard fetches one rate in Bhiwani and another in Hisar on the same morning.",
-  "Which coaching centre on that road still has the teacher whose name is painted on the board.",
-];
+import Button from "../Button.astro";
+
+const fee = "₹500";
+const payHref = "#pay";
+const heroCta = `Pay ${fee} — hold a seat`;
 ---
 
-<section class="hero">
-  <div class="wrap">
-    <p class="opener">No AI model knows:</p>
+<section id="top" class="hero">
+  <div class="wrap grid-2">
+    <div>
+      <p class="eyebrow">AI Agent Training Program &middot; Cohort 01</p>
+      <h1>
+        Your town already runs on WhatsApp, registers and paper.<br />
+        <span class="gold devanagari">अब एक एजेंट बनाते हैं।</span>
+      </h1>
+      <p class="lead">
+        Nine weeks, three live sessions a week, and you build on the days
+        between. Twenty seats, split across two tracks. Built in public
+        &mdash; the code, the failures and the numbers all get published.
+      </p>
+      <p class="sub">
+        For college students in Bhiwani and Hisar, and for working IT
+        professionals nearby who want to ship an agent instead of watching
+        one more course.
+      </p>
+      <div class="cta-row">
+        <Button size="lg" href={payHref}>{heroCta}</Button>
+        <Button size="lg" variant="secondary" href="#tracks">See the two tracks</Button>
+      </div>
+      <p class="fine">{fee}, non-refundable. Registration closes 17 September &mdash; four days before the first session.</p>
+    </div>
 
-    <ol class="questions">
-      {questions.map((q) => (
-        <li>
-          <span class="q">{q}</span>
-          <span class="blank" aria-hidden="true"></span>
-        </li>
-      ))}
-    </ol>
-
-    <p class="turn">
-      Somebody here knows all four. None of it is written anywhere a machine
-      can read.
-    </p>
-
-    <p class="turn">
-      From 21 September to 19 November, three evenings a week, we are going to
-      write it down — and build something that can answer with it.
-    </p>
-
-    <p class="claim">You don't watch this happen. You'll build it.</p>
-
-    <a class="cta" href="#register">Register</a>
-
-    <dl class="facts">
-      <div><dt>Starts</dt><dd>21 September</dd></div>
-      <div><dt>Sessions</dt><dd>Three a week, live, plus building on the days between</dd></div>
-      <div><dt>Seats</dt><dd>20</dd></div>
-      <div><dt>Registration</dt><dd>₹500</dd></div>
-    </dl>
+    <div class="card card-gold offer">
+      <p class="eyebrow">The whole offer, in numbers</p>
+      <dl>
+        <div><dt>Runs</dt><dd>21 Sep &ndash; 19 Nov 2026</dd></div>
+        <div><dt>Live sessions</dt><dd>Mon, Wed, Fri &mdash; 26 in all</dd></div>
+        <div><dt>Seats</dt><dd>20 seats</dd></div>
+        <div><dt>Registration closes</dt><dd>17 September 2026</dd></div>
+        <div class="fee-row"><dt>Fee</dt><dd class="fee">{fee}</dd></div>
+      </dl>
+      <Button size="lg" href={payHref} class="offer-cta">{heroCta}</Button>
+      <p class="fine">There is no recording. If you miss a session, you catch up from the build log like everyone else.</p>
+    </div>
   </div>
 </section>
 
 <style>
-  .hero { padding-top: clamp(3rem, 10vh, 6rem); }
+  .hero { padding: 72px 24px 64px; background: var(--gradient-navy-depth); }
 
-  .opener {
-    font-family: var(--display);
-    font-weight: 500;
-    font-size: clamp(1.05rem, 2vw, 1.25rem);
-    color: var(--muted);
-    margin-bottom: 1.75rem;
-  }
-
-  .questions {
-    list-style: none;
-    margin: 0 0 2.75rem;
-    padding: 0;
-  }
-
-  .questions li { margin-bottom: 2.25rem; max-width: 32rem; }
-
-  .q {
-    display: block;
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: clamp(1.5rem, 4.6vw, 2.25rem);
-    line-height: 1.08;
-    letter-spacing: -0.025em;
-    text-wrap: pretty;
-  }
-
-  /* The one bold move: an answer line nobody has filled in. */
-  .blank {
-    display: block;
-    height: 1.6rem;
-    margin-top: 0.65rem;
-    border-bottom: 2px solid var(--sarson);
-  }
-
-  .questions li:nth-child(2) .blank { width: 78%; }
-  .questions li:nth-child(3) .blank { width: 64%; }
-  .questions li:nth-child(4) .blank { width: 88%; }
-
-  .turn { color: var(--muted); }
-
-  .claim {
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: clamp(1.15rem, 2.4vw, 1.4rem);
-    letter-spacing: -0.015em;
-    color: var(--ink);
-    margin-top: 2rem;
-  }
-
-  .cta {
-    display: inline-block;
-    margin-top: 1.5rem;
-    padding: 0.85rem 2.25rem;
-    background: var(--ink);
-    color: var(--paper);
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: 1.0625rem;
-    text-decoration: none;
-    border-radius: 2px;
-  }
-
-  .cta:hover { background: var(--sarson-deep); }
-
-  .facts {
-    margin: 3rem 0 0;
-    padding-top: 1.75rem;
-    border-top: 1px solid var(--rule);
+  .grid-2 {
     display: grid;
-    gap: 0.9rem;
-    max-width: var(--measure);
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 56px;
+    align-items: start;
   }
 
-  .facts div {
-    display: grid;
-    grid-template-columns: 8.5rem 1fr;
-    gap: 0.75rem;
-    align-items: baseline;
+  h1 {
+    font-size: clamp(2.25rem, 4.4vw, 3rem);
+    line-height: 1.02;
+    margin: 0 0 20px;
   }
 
-  .facts dt {
-    font-family: var(--display);
-    font-weight: 500;
-    font-size: 0.9375rem;
-    color: var(--muted);
-  }
+  .devanagari { font-family: var(--font-devanagari); }
 
-  .facts dd { margin: 0; font-size: 1rem; }
+  .lead { font-size: 1.125rem; line-height: 1.55; color: var(--text-muted); margin: 0 0 12px; }
+  .sub { font-size: 0.9375rem; line-height: 1.55; color: var(--text-subtle); margin: 0 0 32px; }
 
-  @media (max-width: 26rem) {
-    .facts div { grid-template-columns: 1fr; gap: 0.1rem; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+
+  .fine { font-size: 0.75rem; color: var(--text-faint); margin: 20px 0 0; line-height: 1.32; max-width: none; }
+
+  .offer dl { margin: 0 0 20px; display: grid; gap: 0; }
+  .offer dl div {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+    padding: 12px 0; border-bottom: 1px solid var(--border-hairline);
   }
+  .offer dl div:last-child { border-bottom: 0; }
+  .offer dt { font-size: 0.875rem; color: var(--text-subtle); }
+  .offer dd { margin: 0; font-size: 1rem; font-weight: 600; color: var(--text-heading); text-align: right; }
+  .offer .fee { font-size: 1.375rem; font-weight: 700; color: var(--gold-300); }
+  .offer :global(.offer-cta) { width: 100%; margin-top: 0; }
+  .offer .fine { margin-top: 16px; }
 </style>

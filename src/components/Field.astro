@@ -1,0 +1,35 @@
+---
+interface Option {
+  value: string;
+  label: string;
+}
+
+interface Props {
+  id: string;
+  label: string;
+  as?: "input" | "select" | "textarea";
+  type?: string;
+  placeholder?: string;
+  options?: Option[];
+  class?: string;
+}
+
+const { id, label, as = "input", type = "text", placeholder, options = [], class: className = "" } = Astro.props;
+---
+
+<div class={["field", className].filter(Boolean).join(" ")}>
+  <label for={id}>{label}</label>
+  {
+    as === "select" ? (
+      <select id={id} name={id}>
+        {options.map((o) => (
+          <option value={o.value}>{o.label}</option>
+        ))}
+      </select>
+    ) : as === "textarea" ? (
+      <textarea id={id} name={id} placeholder={placeholder} rows="4" />
+    ) : (
+      <input id={id} name={id} type={type} placeholder={placeholder} />
+    )
+  }
+</div>

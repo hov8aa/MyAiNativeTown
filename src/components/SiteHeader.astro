@@ -1,0 +1,74 @@
+---
+import Button from "./Button.astro";
+---
+
+<header class="site-header">
+  <a href="#top" class="brand">
+    <span class="brand-name">My<span class="gold">Ai</span>NativeTown</span>
+    <span class="brand-loc">Bhiwani &middot; Hisar</span>
+  </a>
+  <nav aria-label="Primary">
+    <a href="#questions">The questions</a>
+    <a href="#building">What we build</a>
+    <a href="#tracks">Tracks</a>
+    <a href="#format">Format</a>
+    <a href="#register">Register</a>
+  </nav>
+  <Button size="sm" href="#register">Register &mdash; &#8377;500</Button>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    row-gap: 12px;
+    padding: 20px 24px;
+    background: rgba(7, 22, 39, 0.82);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border-hairline);
+  }
+
+  .brand {
+    text-decoration: none;
+    display: grid;
+    gap: 2px;
+  }
+
+  .brand-name {
+    font-weight: 700;
+    font-size: 1.125rem;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    color: var(--text-heading);
+  }
+
+  .brand-loc {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-subtle);
+    font-weight: 500;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  nav a {
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+
+  nav a:hover { color: var(--gold-200, #fbe3a2); }
+</style>
