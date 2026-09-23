@@ -2,12 +2,13 @@
 import Button from "../Button.astro";
 import Field from "../Field.astro";
 
-const fee = "₹500";
-const payHref = "#pay";
-const heroCta = `Pay ${fee} — hold a seat`;
+const appFee = "₹500";
+const programFee = "₹1,00,000";
+const dmHref = "https://wa.me/917015330518?text=AGENT";
+const dmCta = `DM "AGENT" to know more`;
 const trackOptions = [
-  { value: "a", label: "Track A — foundations, and you build" },
-  { value: "b", label: "Track B — you own a layer and ship it" },
+  { value: "freshers", label: "Freshers — new to this" },
+  { value: "experienced", label: "Experienced — already write code" },
   { value: "unsure", label: "Not sure yet — help me pick" },
 ];
 ---
@@ -16,20 +17,21 @@ const trackOptions = [
   <div class="wrap grid-2">
     <div>
       <p class="eyebrow">Register</p>
-      <h2>20 seats. <span class="gold">Ek hi cohort.</span></h2>
+      <h2>10 seats. <span class="gold">Ek hi cohort.</span></h2>
       <p class="lead">
-        {fee} holds your seat, non-refundable. It is deliberately small and
-        deliberately not zero &mdash; it is the first filter, and it is the
-        only one you pay for.
+        {appFee} gets you in the door. The {programFee} program fee is due
+        only after you have a job offer, payable in installments &mdash; it
+        is the first filter, and it is the only thing you pay before you're
+        hired.
       </p>
       <div class="steps">
-        <p><span class="num">1</span>Pay {fee} and fill this in &mdash; both, or the seat does not hold.</p>
-        <p><span class="num">2</span>I reply within two working days with your track and the joining link.</p>
-        <p><span class="num">3</span>Registration closes 17 September. Cohort starts 21 September.</p>
+        <p><span class="num">1</span>DM &ldquo;AGENT&rdquo; on WhatsApp, or fill this in &mdash; either works.</p>
+        <p><span class="num">2</span>I reply within two working days with next steps and the joining link.</p>
+        <p><span class="num">3</span>Cohort 01 starts 12 October. Ten seats, first come first held.</p>
       </div>
       <p class="footnote">
-        Questions before you pay? Write to me and say which track you are
-        looking at. Vague inputs get vague replies.
+        Questions before you apply? Write to me and say whether you're a
+        fresher or already working. Vague inputs get vague replies.
       </p>
     </div>
 
@@ -40,7 +42,7 @@ const trackOptions = [
           <Field id="phone" label="WhatsApp number" placeholder="98xxxxxxxx" />
         </div>
         <Field id="place" label="College or company" placeholder="TIT&S Bhiwani" />
-        <Field id="track" label="Which track" as="select" options={trackOptions} />
+        <Field id="track" label="Freshers or experienced" as="select" options={trackOptions} />
         <Field
           id="thing"
           label="What would you point an agent at first?"
@@ -48,8 +50,8 @@ const trackOptions = [
           placeholder="The shop, clinic or office you already know from the inside."
         />
         <div class="actions">
-          <Button size="lg" href={payHref}>{heroCta}</Button>
-          <p class="fine">Opens the payment page. Non-refundable, and there is no waitlist once twenty are in.</p>
+          <Button size="lg" href={dmHref}>{dmCta}</Button>
+          <p class="fine">Opens WhatsApp. {appFee} application fee, and there is no waitlist once ten are in.</p>
         </div>
       </form>
     </div>

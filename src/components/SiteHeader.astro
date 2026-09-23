@@ -1,5 +1,7 @@
 ---
 import Button from "./Button.astro";
+
+const dmHref = "https://wa.me/917015330518?text=AGENT";
 ---
 
 <header class="site-header">
@@ -10,11 +12,11 @@ import Button from "./Button.astro";
   <nav aria-label="Primary">
     <a href="#questions">The questions</a>
     <a href="#building">What we build</a>
-    <a href="#tracks">Tracks</a>
+    <a href="#tracks">Who it&rsquo;s for</a>
     <a href="#format">Format</a>
     <a href="#register">Register</a>
   </nav>
-  <Button size="sm" href="#register">Register &mdash; &#8377;500</Button>
+  <Button size="sm" href={dmHref}>DM &ldquo;AGENT&rdquo;</Button>
 </header>
 
 <style>
