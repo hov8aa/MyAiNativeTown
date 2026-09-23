@@ -34,7 +34,6 @@ src/
   content/copy.md            the source copy, with open decisions logged
   components/
     Button.astro             the one CTA button — primary/secondary, sm/md/lg
-    Field.astro               input / select / textarea, used by Register
     SiteHeader.astro          sticky nav + header CTA
     SiteFooter.astro          gold divider + GitHub/YouTube/LinkedIn
     sections/
@@ -46,7 +45,7 @@ src/
       Format.astro            paired with Outcomes + DontJoin
       Outcomes.astro          what you walk out with
       DontJoin.astro
-      Register.astro          seats, dates, fee, the form
+      Register.astro          seats, dates, fee, the WhatsApp CTA
       Closing.astro
 ```
 
