@@ -1,9 +1,10 @@
 ---
 import Button from "../Button.astro";
 
-const fee = "₹500";
-const payHref = "#pay";
-const heroCta = `Pay ${fee} — hold a seat`;
+const appFee = "₹500";
+const programFee = "₹1,00,000";
+const dmHref = "https://wa.me/917015330518?text=AGENT";
+const dmCta = `DM "AGENT" to know more`;
 ---
 
 <section id="top" class="hero">
@@ -11,37 +12,50 @@ const heroCta = `Pay ${fee} — hold a seat`;
     <div>
       <p class="eyebrow">AI Agent Training Program &middot; Cohort 01</p>
       <h1>
-        Your town already runs on WhatsApp, registers and paper.<br />
-        <span class="gold devanagari">अब एक एजेंट बनाते हैं।</span>
+        Learn building AI agents in 90 days.<br />
+        <span class="gold">Pay only when you&rsquo;re hired.</span>
       </h1>
+      <p class="hindi devanagari">पहले सीखो, पैसे जॉब लगने के बाद।</p>
       <p class="lead">
-        Nine weeks, three live sessions a week, and you build on the days
-        between. Twenty seats, split across two tracks. Built in public
-        &mdash; the code, the failures and the numbers all get published.
+        {appFee} gets you in the door. The {programFee} program fee is due
+        only after you have a job offer, payable in installments. Ten
+        seats, online and offline in Bhiwani and Hisar.
       </p>
       <p class="sub">
-        For college students in Bhiwani and Hisar, and for working IT
-        professionals nearby who want to ship an agent instead of watching
-        one more course.
+        For freshers and for working professionals nearby who want to ship
+        an agent instead of watching one more course. Just a laptop and
+        internet.
       </p>
       <div class="cta-row">
-        <Button size="lg" href={payHref}>{heroCta}</Button>
-        <Button size="lg" variant="secondary" href="#tracks">See the two tracks</Button>
+        <Button size="lg" href={dmHref}>{dmCta}</Button>
+        <Button size="lg" variant="secondary" href="#tracks">See who this is for</Button>
       </div>
-      <p class="fine">{fee}, non-refundable. Registration closes 17 September &mdash; four days before the first session.</p>
+      <p class="fine">{appFee} application fee. Cohort 01 starts 12 October 2026 &mdash; ten seats.</p>
     </div>
 
     <div class="card card-gold offer">
-      <p class="eyebrow">The whole offer, in numbers</p>
+      <p class="eyebrow">The whole offer</p>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-value">{appFee}</span>
+          <span class="stat-label">application fee</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">₹0</span>
+          <span class="stat-label">fees until you&rsquo;re hired</span>
+        </div>
+        <div class="stat stat-gold">
+          <span class="stat-value">₹3&ndash;6 LPA</span>
+          <span class="stat-label">the roles you train for</span>
+        </div>
+      </div>
       <dl>
-        <div><dt>Runs</dt><dd>21 Sep &ndash; 19 Nov 2026</dd></div>
-        <div><dt>Live sessions</dt><dd>Mon, Wed, Fri &mdash; 26 in all</dd></div>
-        <div><dt>Seats</dt><dd>20 seats</dd></div>
-        <div><dt>Registration closes</dt><dd>17 September 2026</dd></div>
-        <div class="fee-row"><dt>Fee</dt><dd class="fee">{fee}</dd></div>
+        <div><dt>Starts</dt><dd>12 October 2026</dd></div>
+        <div><dt>Seats</dt><dd>10 seats</dd></div>
+        <div><dt>Format</dt><dd>Online + offline &mdash; Bhiwani &middot; Hisar</dd></div>
       </dl>
-      <Button size="lg" href={payHref} class="offer-cta">{heroCta}</Button>
-      <p class="fine">There is no recording. If you miss a session, you catch up from the build log like everyone else.</p>
+      <Button size="lg" href={dmHref} class="offer-cta">{dmCta}</Button>
+      <p class="fine">&ldquo;Hired&rdquo; means a written offer from an organization &mdash; that&rsquo;s when the {programFee} program fee is due, payable in installments. There is no recording; if you miss a session, you catch up from the build log like everyone else.</p>
     </div>
   </div>
 </section>
@@ -59,10 +73,17 @@ const heroCta = `Pay ${fee} — hold a seat`;
   h1 {
     font-size: clamp(2.25rem, 4.4vw, 3rem);
     line-height: 1.02;
-    margin: 0 0 20px;
+    margin: 0 0 16px;
   }
 
   .devanagari { font-family: var(--font-devanagari); }
+
+  .hindi {
+    font-size: 1.0625rem;
+    color: var(--text-subtle);
+    margin: 0 0 20px;
+    max-width: none;
+  }
 
   .lead { font-size: 1.125rem; line-height: 1.55; color: var(--text-muted); margin: 0 0 12px; }
   .sub { font-size: 0.9375rem; line-height: 1.55; color: var(--text-subtle); margin: 0 0 32px; }
@@ -70,6 +91,28 @@ const heroCta = `Pay ${fee} — hold a seat`;
   .cta-row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
 
   .fine { font-size: 0.75rem; color: var(--text-faint); margin: 20px 0 0; line-height: 1.32; max-width: none; }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .stat {
+    display: grid;
+    gap: 4px;
+    padding: 14px 12px;
+    background: var(--surface-inset);
+    border: 1px solid var(--border-hairline);
+    border-radius: 14px;
+  }
+
+  .stat-gold { background: rgba(227, 167, 44, 0.1); border-color: var(--border-gold-soft); }
+
+  .stat-value { font-size: 1.125rem; font-weight: 700; color: var(--text-heading); }
+  .stat-gold .stat-value { color: var(--gold-300); }
+  .stat-label { font-size: 0.75rem; color: var(--text-subtle); line-height: 1.3; }
 
   .offer dl { margin: 0 0 20px; display: grid; gap: 0; }
   .offer dl div {
@@ -79,7 +122,10 @@ const heroCta = `Pay ${fee} — hold a seat`;
   .offer dl div:last-child { border-bottom: 0; }
   .offer dt { font-size: 0.875rem; color: var(--text-subtle); }
   .offer dd { margin: 0; font-size: 1rem; font-weight: 600; color: var(--text-heading); text-align: right; }
-  .offer .fee { font-size: 1.375rem; font-weight: 700; color: var(--gold-300); }
   .offer :global(.offer-cta) { width: 100%; margin-top: 0; }
   .offer .fine { margin-top: 16px; }
+
+  @media (max-width: 30rem) {
+    .stats { grid-template-columns: 1fr; }
+  }
 </style>

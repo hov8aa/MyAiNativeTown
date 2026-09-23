@@ -9,33 +9,53 @@ Bracketed items are still open.
 
 ## Decisions log
 
-**Closed**
+**Closed — pivoted to the pay-after-hired model (see pamphlet, Sept 2026)**
 
-- Cohort: 20. Registration closes 17 September, starts 21 September.
+- Cohort: 10 seats (was 20). Starts 12 October 2026. Runs 90 days — no
+  end date confirmed yet, see open items.
+- Fee model changed: ₹500 application fee, non-refundable, upfront. The
+  ₹1,00,000 program fee is due only once "hired" — defined as a written
+  offer from an organization — and is payable in installments. This
+  replaces the old flat ₹500-only fee.
+- Target outcome stated on the page: the roles this program trains for pay
+  ₹3–6 LPA.
+- Delivery is online and offline, from Bhiwani and Hisar. A laptop and
+  internet is the only requirement.
 - Three live sessions a week; building and self-learning on the other days.
-- Track A builds too — small, useful agents.
-- Fee: ₹500, non-refundable.
-- Days: Monday, Wednesday, Friday — 26 sessions in all.
+- Track A / Track B renamed to **Freshers** / **Experienced** — same
+  underlying split (foundations-and-build vs. own-a-layer-and-ship), new
+  labels only.
 - Homework is scoped to a goal, not a number of hours.
-- The cohort does not pause for Diwali; sessions run 6–10 November as usual.
+- The cohort does not pause for Diwali.
+- Primary CTA across the page is now "DM 'AGENT' to know more", a WhatsApp
+  deep link to +91 70153 30518 (`wa.me/917015330518?text=AGENT`), replacing
+  the old "Pay ₹500" flow as the main funnel. The Register form stays as an
+  alternative path.
+- YouTube: https://www.youtube.com/@AgentforceWithHov8a (footer link).
+- The header's decorative waveform graphic on the source pamphlet is
+  confirmed purely decorative — no audio/testimonial to embed.
 
 **Still open**
 
-1. **The form and payment link.** A static page cannot take ₹500. Needs a
-   Razorpay page or UPI plus a form. This is the critical path, not the site.
-   The page's pay button currently points at a placeholder `#pay`.
-2. **What Track A's "one real thing" is scoped to.** Deliberately loose in the
-   copy; cannot stay loose in the room.
+1. **The exact end date of the 90-day cohort.** Only the 12 October start
+   is confirmed. Session-count claims on the page ("roughly 38 sessions")
+   are derived from 90 days × 3/week and should be corrected once the real
+   end date and any breaks are known.
+2. **How the ₹500 application fee and the ₹1,00,000 installment payments
+   are actually collected.** Needs a Razorpay/UPI link for the ₹500, and a
+   defined installment plan (amounts, schedule, what happens if someone is
+   hired mid-program) for the ₹1,00,000. The page's fee CTAs currently point
+   at a WhatsApp DM, not a payment page.
+3. **What the Freshers track's "one real thing" is scoped to.** Deliberately
+   loose in the copy; cannot stay loose in the room.
 
 **Flagged**
 
-- **The curriculum is day-numbered; the program is session-numbered.** Track B's
-  plan runs Day 1 to Day 30 as consecutive days — walk the category Day 4,
-  checkpoint Day 7, first wrong answer Day 18. At three sessions a week,
-  21 September to 19 November is roughly 26 sessions. The build log needs
-  renumbering, and each session needs a between-days assignment attached.
-- **Diwali.** 6–10 November falls inside the cohort, costing roughly three
-  sessions. The page should say whether those weeks pause.
+- **The curriculum is day-numbered; the program is session-numbered**, and
+  both need renumbering against the new 12 October start and undetermined
+  end date. `Building.astro`'s three layers currently use generic
+  "early/mid/final sessions" labels instead of specific session ranges
+  until the real cadence is confirmed.
 
 ---
 
