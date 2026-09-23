@@ -189,31 +189,6 @@ section { padding-block: 72px; }
 .btn-secondary { background: transparent; color: var(--gold-300); border-color: var(--border-gold-soft); }
 .btn-secondary:hover { background: var(--surface-gold-tint); border-color: var(--gold-400); color: var(--gold-300); }
 
-/* ---- Form fields (Field.astro) ---- */
-.field { display: grid; gap: 8px; }
-.field label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-400); }
-.field input, .field select, .field textarea {
-  width: 100%; font-family: var(--font-display); font-size: 1rem;
-  color: var(--text-body); background: var(--surface-inset);
-  border: 1px solid var(--border-hairline);
-  border-radius: var(--radius-sm); padding: 0 16px;
-  height: var(--control-h-md); -webkit-appearance: none; appearance: none;
-  transition: border-color 220ms cubic-bezier(0.2,0.7,0.3,1), box-shadow 220ms cubic-bezier(0.2,0.7,0.3,1), background 220ms cubic-bezier(0.2,0.7,0.3,1);
-}
-.field textarea { height: auto; min-height: 118px; padding: 12px 16px; line-height: 1.55; resize: vertical; }
-.field input::placeholder, .field textarea::placeholder { color: var(--text-faint); }
-.field input:hover, .field select:hover, .field textarea:hover { border-color: var(--border-gold-soft); }
-.field input:focus, .field select:focus, .field textarea:focus {
-  outline: none; background: rgba(4,16,31,0.75); border-color: var(--gold-400);
-  box-shadow: 0 0 0 3px rgba(227,167,44,0.16);
-}
-.field select {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f0be4e' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-  background-repeat: no-repeat; background-position: right 16px center;
-  background-size: 16px; padding-right: 40px;
-}
-.field select option { background: var(--navy-850); color: var(--text-body); }
-
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }

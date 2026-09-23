@@ -1,16 +1,10 @@
 ---
 import Button from "../Button.astro";
-import Field from "../Field.astro";
 
 const appFee = "₹500";
 const programFee = "₹1,00,000";
 const dmHref = "https://wa.me/917015330518?text=AGENT";
 const dmCta = `DM "AGENT" to know more`;
-const trackOptions = [
-  { value: "freshers", label: "Freshers — new to this" },
-  { value: "experienced", label: "Experienced — already write code" },
-  { value: "unsure", label: "Not sure yet — help me pick" },
-];
 ---
 
 <section id="register" class="register">
@@ -25,7 +19,7 @@ const trackOptions = [
         hired.
       </p>
       <div class="steps">
-        <p><span class="num">1</span>DM &ldquo;AGENT&rdquo; on WhatsApp, or fill this in &mdash; either works.</p>
+        <p><span class="num">1</span>DM &ldquo;AGENT&rdquo; on WhatsApp.</p>
         <p><span class="num">2</span>I reply within two working days with next steps and the joining link.</p>
         <p><span class="num">3</span>Cohort 01 starts 12 October. Ten seats, first come first held.</p>
       </div>
@@ -35,25 +29,16 @@ const trackOptions = [
       </p>
     </div>
 
-    <div class="card card-gold">
-      <form class="form">
-        <div class="field-row">
-          <Field id="name" label="Your name" placeholder="Hari Om" />
-          <Field id="phone" label="WhatsApp number" placeholder="98xxxxxxxx" />
-        </div>
-        <Field id="place" label="College or company" placeholder="TIT&S Bhiwani" />
-        <Field id="track" label="Freshers or experienced" as="select" options={trackOptions} />
-        <Field
-          id="thing"
-          label="What would you point an agent at first?"
-          as="textarea"
-          placeholder="The shop, clinic or office you already know from the inside."
-        />
-        <div class="actions">
-          <Button size="lg" href={dmHref}>{dmCta}</Button>
-          <p class="fine">Opens WhatsApp. {appFee} application fee, and there is no waitlist once ten are in.</p>
-        </div>
-      </form>
+    <div class="card card-gold dm-card">
+      <p class="eyebrow">Apply on WhatsApp</p>
+      <p class="phone">+91 70153 30518</p>
+      <p class="dm-lead">
+        Message &ldquo;AGENT&rdquo; and tell me whether you're a fresher or
+        already working, plus the shop, clinic or office you'd point an
+        agent at first.
+      </p>
+      <Button size="lg" href={dmHref} class="dm-cta">{dmCta}</Button>
+      <p class="fine">Opens WhatsApp. {appFee} application fee, and there is no waitlist once ten are in.</p>
     </div>
   </div>
 </section>
@@ -93,9 +78,20 @@ const trackOptions = [
     max-width: none;
   }
 
-  .form { display: grid; gap: 20px; }
-  .field-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 20px; }
+  .dm-card { display: flex; flex-direction: column; }
 
-  .actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-  .actions .fine { font-size: 0.75rem; color: var(--text-faint); margin: 0; max-width: 34ch; line-height: 1.32; }
+  .phone {
+    margin: 0 0 16px;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-heading);
+    letter-spacing: -0.01em;
+    max-width: none;
+  }
+
+  .dm-lead { font-size: 1rem; line-height: 1.55; margin: 0 0 28px; max-width: none; }
+
+  .dm-card :global(.dm-cta) { width: 100%; }
+
+  .dm-card .fine { font-size: 0.75rem; color: var(--text-faint); margin: 16px 0 0; line-height: 1.32; max-width: none; }
 </style>

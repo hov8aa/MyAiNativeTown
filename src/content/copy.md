@@ -29,8 +29,10 @@ Bracketed items are still open.
 - The cohort does not pause for Diwali.
 - Primary CTA across the page is now "DM 'AGENT' to know more", a WhatsApp
   deep link to +91 70153 30518 (`wa.me/917015330518?text=AGENT`), replacing
-  the old "Pay ₹500" flow as the main funnel. The Register form stays as an
-  alternative path.
+  the old "Pay ₹500" flow as the main funnel.
+- The Register lead-capture form (name/WhatsApp/college/track/textarea) is
+  removed — it wasn't wired to anything. WhatsApp is the one funnel now;
+  Register.astro's right column is a plain "Apply on WhatsApp" card instead.
 - YouTube: https://www.youtube.com/@AgentforceWithHov8a (footer link).
 - The header's decorative waveform graphic on the source pamphlet is
   confirmed purely decorative — no audio/testimonial to embed.
