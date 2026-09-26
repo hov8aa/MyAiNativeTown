@@ -2,12 +2,13 @@
 
 Public site for the **AI Agent Training Program — Bhiwani / Hisar**.
 
-Cohort 01 starts 12 October 2026. Ninety days, three live sessions a week,
-online and offline in Bhiwani and Hisar. Ten seats. ₹500 application fee;
-the ₹1,00,000 program fee is due only once you're hired (a written offer
-from an organization), payable in installments. Freshers track (foundations,
-and you build) and Experienced track (you own a piece of the town agent and
-ship it).
+Cohort 01 starts 12 October 2026. Ninety days, three live sessions a week
+(two hours each), in person in Bhiwani and Hisar — offline only, no online
+option. Ten seats. ₹500 application fee; the ₹1,00,000 program fee is due
+only once you're hired (a job offer, or self-employment/freelance/contract
+work, of ₹3 LPA or more), paid as an agreed share of salary in
+installments. Freshers track (foundations, and you build) and Experienced
+track (you own a piece of the town agent and ship it).
 
 The program is built in public. So is this site.
 
@@ -51,11 +52,11 @@ src/
 
 ## Before this goes live
 
-- [ ] The 90-day cohort's actual end date — only the 12 October start is
-      confirmed; the page's "roughly 38 sessions" is derived, not given
-- [ ] A real payment flow for the ₹500 application fee, and a defined
-      installment plan for the ₹1,00,000 program fee — the CTAs currently
-      all point at a WhatsApp DM (`wa.me/917015330518?text=AGENT`)
+- [ ] Exact venue addresses in Bhiwani and Hisar — to be shared later
+- [ ] Tools, platforms and detailed program content — to be shared soon
 - [ ] Point the domain at the deploy
 
-Open decisions are tracked at the bottom of `src/content/copy.md`.
+The cohort's goal-oriented format (no fixed end date or session count) and
+the counselor-based payment flow (no online payment link) are intentional,
+not gaps — see `assets/documents/rag/` and the decisions log at the bottom
+of `src/content/copy.md`.

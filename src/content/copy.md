@@ -11,16 +11,12 @@ Bracketed items are still open.
 
 **Closed — pivoted to the pay-after-hired model (see pamphlet, Sept 2026)**
 
-- Cohort: 10 seats (was 20). Starts 12 October 2026. Runs 90 days — no
-  end date confirmed yet, see open items.
+- Cohort: 10 seats (was 20). Starts 12 October 2026. Runs 90 days.
 - Fee model changed: ₹500 application fee, non-refundable, upfront. The
-  ₹1,00,000 program fee is due only once "hired" — defined as a written
-  offer from an organization — and is payable in installments. This
-  replaces the old flat ₹500-only fee.
+  ₹1,00,000 program fee is due only once "hired" and is payable in
+  installments. This replaces the old flat ₹500-only fee.
 - Target outcome stated on the page: the roles this program trains for pay
   ₹3–6 LPA.
-- Delivery is online and offline, from Bhiwani and Hisar. A laptop and
-  internet is the only requirement.
 - Three live sessions a week; building and self-learning on the other days.
 - Track A / Track B renamed to **Freshers** / **Experienced** — same
   underlying split (foundations-and-build vs. own-a-layer-and-ship), new
@@ -37,27 +33,53 @@ Bracketed items are still open.
 - The header's decorative waveform graphic on the source pamphlet is
   confirmed purely decorative — no audio/testimonial to embed.
 
+**Closed — reconciled against the Agentforce knowledge docs (see
+`assets/documents/rag/`, Sept 2026)**
+
+The pamphlet said "online + offline"; the Core Facts / FAQ documents that
+came after it are more detailed and contradict that on one point. Treating
+the knowledge docs as the more authoritative, more recent source:
+
+- **Delivery is offline only, in person in Bhiwani and Hisar — there is no
+  online option.** This corrects the pamphlet-era "online + offline"
+  wording that was on the page in `Hero.astro` and `Format.astro`.
+- Sessions are 2 hours each, Monday/Wednesday/Friday.
+- The program is intentionally goal-oriented: **no fixed end date and no
+  fixed session count.** This isn't an open question to resolve — it's the
+  model. The page's earlier derived "roughly 38 sessions" claim was wrong
+  and has been removed rather than corrected to a different number.
+- "Hired" has a precise, disclosable threshold: a job offer — or
+  self-employment, freelance or contract work — of ₹3 LPA or more. Below
+  ₹3 LPA doesn't count. A job that arrives within 1–3 months of the
+  program counts too, per the student's written agreement.
+- The ₹500 application fee is paid through the program's counselor (no
+  online payment link); the ₹1,00,000 program fee is paid as an agreed
+  share of the student's salary, in installments, per a written agreement
+  every student signs before joining. The exact percentage, installment
+  amounts, and venue address are deliberately not published — those are
+  set with the counselor, not disclosed on the page or by the answering
+  agent (see the topic instructions in `assets/documents/`).
+- Eligibility: final/pre-final year engineering students, and graduates of
+  3- or 4-year degree programs, for the Freshers track. Working engineers
+  who already code, for the Experienced track. No age limit. A laptop and
+  internet connection, no minimum spec.
+
 **Still open**
 
-1. **The exact end date of the 90-day cohort.** Only the 12 October start
-   is confirmed. Session-count claims on the page ("roughly 38 sessions")
-   are derived from 90 days × 3/week and should be corrected once the real
-   end date and any breaks are known.
-2. **How the ₹500 application fee and the ₹1,00,000 installment payments
-   are actually collected.** Needs a Razorpay/UPI link for the ₹500, and a
-   defined installment plan (amounts, schedule, what happens if someone is
-   hired mid-program) for the ₹1,00,000. The page's fee CTAs currently point
-   at a WhatsApp DM, not a payment page.
-3. **What the Freshers track's "one real thing" is scoped to.** Deliberately
+1. **What the Freshers track's "one real thing" is scoped to.** Deliberately
    loose in the copy; cannot stay loose in the room.
+2. **Exact venue addresses in Bhiwani and Hisar** — to be shared later.
+3. **Tools, platforms and detailed program content** — to be shared soon.
+4. **Target job titles and placement partners** — not announced yet; the
+   page should keep saying so rather than implying specific employers.
 
 **Flagged**
 
 - **The curriculum is day-numbered; the program is session-numbered**, and
-  both need renumbering against the new 12 October start and undetermined
-  end date. `Building.astro`'s three layers currently use generic
-  "early/mid/final sessions" labels instead of specific session ranges
-  until the real cadence is confirmed.
+  both need renumbering against the new 12 October start. Since there's no
+  fixed end date, `Building.astro`'s three layers use generic "early/mid/
+  final sessions" labels instead of specific session ranges — that's now
+  the permanent phrasing, not a placeholder.
 
 ---
 
