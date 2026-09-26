@@ -24,6 +24,17 @@ const { title, description } = Astro.props;
       gtag('js', new Date());
 
       gtag('config', 'G-S8P1T5LCQ8');
+
+      // DM "AGENT" clicks are the site's conversion: one event, tagged by CTA position.
+      document.addEventListener('click', function (e) {
+        var link = e.target.closest && e.target.closest('a[data-cta]');
+        if (!link) return;
+        gtag('event', 'generate_lead', {
+          method: 'whatsapp',
+          cta_location: link.getAttribute('data-cta'),
+          transport_type: 'beacon'
+        });
+      });
     </script>
     <title>{title}</title>
     <meta name="description" content={description} />
