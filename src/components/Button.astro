@@ -4,9 +4,10 @@ interface Props {
   variant?: "primary" | "secondary";
   size?: "sm" | "md" | "lg";
   class?: string;
+  [key: `data-${string}`]: string | undefined;
 }
 
-const { href, variant = "primary", size = "md", class: className = "" } = Astro.props;
+const { href, variant = "primary", size = "md", class: className = "", ...rest } = Astro.props;
 const external = typeof href === "string" && /^https?:\/\//.test(href);
 const cls = ["btn", `btn-${variant}`, size !== "md" ? `btn-${size}` : "", className]
   .filter(Boolean)
@@ -15,11 +16,11 @@ const cls = ["btn", `btn-${variant}`, size !== "md" ? `btn-${size}` : "", classN
 
 {
   href ? (
-    <a class={cls} href={href} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
+    <a class={cls} href={href} {...rest} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
       <slot />
     </a>
   ) : (
-    <button class={cls} type="button">
+    <button class={cls} type="button" {...rest}>
       <slot />
     </button>
   )
