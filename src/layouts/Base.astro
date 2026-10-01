@@ -42,7 +42,15 @@ const { title, description } = Astro.props;
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://myainativetown.com/" />
+    <meta property="og:site_name" content="MyAiNativeTown" />
+    <meta property="og:image" content="https://myainativetown.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="MyAiNativeTown — AI Agent Training Program, Cohort 01, Bhiwani · Hisar" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://myainativetown.com/og-image.png" />
     <link rel="canonical" href="https://myainativetown.com/" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preload" href="/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin />
