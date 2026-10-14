@@ -1,6 +1,6 @@
 # My AI Native Town — Core Facts
 
-Core facts about the My AI Native Town AI Agent Training Program, Cohort 01, in Bhiwani and Hisar, Haryana. Updated 13 October 2026. Source: the program's public site repository and the Cohort 01 banners.
+Core facts about the My AI Native Town AI Agent Training Program, Cohort 01, in Bhiwani and Hisar, Haryana. Updated 14 October 2026. Source: the program's public site repository and the Cohort 01 banners.
 
 ## My AI Native Town program overview
 
@@ -26,7 +26,7 @@ Applicants then attend two free sessions, two hours each, on alternate days. In 
 
 ## Cohort 01 seats and schedule
 
-My AI Native Town Cohort 01 runs for 90 days after the free sessions. It uses a goal-oriented format, so there is no fixed end date or fixed number of sessions. Cohort 01 has 10 seats, held first come, first served, with no waitlist once they are filled.
+My AI Native Town Cohort 01 runs for 90 days after the free sessions. It uses a goal-oriented format, so there is no fixed end date or fixed number of sessions. Cohort 01 has 20 seats per town (Bhiwani and Hisar), held first come, first served, with no waitlist once they are filled.
 
 Live sessions run on alternate days. Each session lasts 2 hours, with the mentor present. On the days between sessions, students learn on their own and build, logging each day as a project. The cohort does not pause for Diwali.
 

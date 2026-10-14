@@ -1,6 +1,6 @@
 # My AI Native Town — FAQ (English)
 
-Answers to common questions about the My AI Native Town AI Agent Training Program, Cohort 01, in Bhiwani and Hisar. Updated 13 October 2026.
+Answers to common questions about the My AI Native Town AI Agent Training Program, Cohort 01, in Bhiwani and Hisar. Updated 14 October 2026.
 
 ## What is My AI Native Town?
 
@@ -68,7 +68,7 @@ Before the free sessions, every applicant does a short voice interview and one w
 
 ## How many seats are there?
 
-Cohort 01 has 10 seats, held first come, first served. There is no waitlist once all 10 are filled.
+Cohort 01 has 20 seats per town (Bhiwani and Hisar), held first come, first served. There is no waitlist once seats are filled.
 
 ## What is the class schedule?
 

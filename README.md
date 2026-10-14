@@ -5,7 +5,7 @@ Public site for the **AI Agent Training Program — Bhiwani / Hisar**.
 Cohort 01: applications open. It starts with a homework evaluation and two
 free sessions; then ninety days of live sessions on alternate days (two
 hours each, mentor present) with daily self-learning and a log entry in
-between. Online + offline, in Bhiwani and Hisar. Ten seats. ₹1,000 registration fee (registration plus the notary for
+between. Online + offline, in Bhiwani and Hisar. Twenty seats per town. ₹1,000 registration fee (registration plus the notary for
 the agreement); the program fee is due
 only once you're hired (a job offer, or self-employment/freelance/contract
 work, of ₹3 LPA or more), paid as an agreed share of salary in
