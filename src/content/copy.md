@@ -9,11 +9,47 @@ Bracketed items are still open.
 
 ## Decisions log
 
+**Closed — evolved program details (13 Oct 2026, from the Cohort 01 banners)**
+
+The banners are now the source of truth for public copy. This supersedes the
+"offline only" decision recorded further down.
+
+- **Delivery is online + offline**, in Bhiwani and Hisar. Final verdict —
+  `Hero.astro`, `Format.astro`, `NotJustACourse.astro` and the meta
+  description now say so. The og-image's "Online + offline" line is correct.
+- **No start date on the page.** Cohort 01 is shown as "applications open".
+- **The entry path:** DM/call → homework evaluation (voice interview + one
+  written Hypothesis→Actions→Expectations task) → two free sessions → decide
+  at the end of session 2: pay ₹1,000, sign the notarised agreement, take a seat.
+- **Rhythm:** after the free sessions, live sessions on alternate days, two
+  hours, mentor present. Days in between: self-learning and building, each
+  day a project with a log entry. Replaces Monday/Wednesday/Friday.
+- **"Hired":** a job offer of ₹3 LPA or more; self-employment and freelance
+  work earning ₹3 LPA or more also count. Replaces "a written offer from an
+  organization" in the hero fine print.
+- **Tracks stay Freshers / Experienced.** Freshers learn the software
+  development life cycle first. The homework evaluation decides the track;
+  Experienced is no longer limited to working engineers who code
+  ("Engineer or not").
+- **Two phone numbers:** +91 97284 85250 and +91 70153 30518. The WhatsApp
+  deep link stays on 70153 30518.
+- Hero headline now reads "Learn to build…" and the Hindi line is the
+  banner's: "पहले सीखो। फ़ीस नौकरी लगने के बाद।"
+- **Upfront fee is ₹1,000**, covering registration and the notary service
+  for the agreement (replaces the ₹500 application fee). Refundability is
+  not stated anywhere until it's decided.
+- **Method: learners build agents again and again**, not one single agent.
+  Freshers' outcome is now "Agents you built, running". The cohort's shared
+  town agent (Building.astro, Experienced track) stays.
+- **No program-fee amount is published** — not on the page, not in the
+  agent's knowledge, not in this repo. The share of salary is set with the
+  counselor and in the written agreement.
+
 **Closed — pivoted to the pay-after-hired model (see pamphlet, Sept 2026)**
 
 - Cohort: 10 seats (was 20). Starts 12 October 2026. Runs 90 days.
 - Fee model changed: ₹500 application fee, non-refundable, upfront. The
-  ₹1,00,000 program fee is due only once "hired" and is payable in
+  program fee is due only once "hired" and is payable in
   installments. This replaces the old flat ₹500-only fee.
 - Target outcome stated on the page: the roles this program trains for pay
   ₹3–6 LPA.
@@ -40,10 +76,11 @@ The pamphlet said "online + offline"; the Core Facts / FAQ documents that
 came after it are more detailed and contradict that on one point. Treating
 the knowledge docs as the more authoritative, more recent source:
 
-- **Delivery is offline only, in person in Bhiwani and Hisar — there is no
-  online option.** This corrects the pamphlet-era "online + offline"
+- ~~**Delivery is offline only, in person in Bhiwani and Hisar — there is no
+  online option.**~~ *Superseded 13 Oct 2026: online + offline.* This corrects the pamphlet-era "online + offline"
   wording that was on the page in `Hero.astro` and `Format.astro`.
-- Sessions are 2 hours each, Monday/Wednesday/Friday.
+- Sessions are 2 hours each. ~~Monday/Wednesday/Friday~~ *Superseded 13 Oct
+  2026: alternate days.*
 - The program is intentionally goal-oriented: **no fixed end date and no
   fixed session count.** This isn't an open question to resolve — it's the
   model. The page's earlier derived "roughly 38 sessions" claim was wrong
@@ -53,7 +90,7 @@ the knowledge docs as the more authoritative, more recent source:
   ₹3 LPA doesn't count. A job that arrives within 1–3 months of the
   program counts too, per the student's written agreement.
 - The ₹500 application fee is paid through the program's counselor (no
-  online payment link); the ₹1,00,000 program fee is paid as an agreed
+  online payment link); the program fee is paid as an agreed
   share of the student's salary, in installments, per a written agreement
   every student signs before joining. The exact percentage, installment
   amounts, and venue address are deliberately not published — those are
@@ -76,7 +113,8 @@ the knowledge docs as the more authoritative, more recent source:
 **Flagged**
 
 - **The curriculum is day-numbered; the program is session-numbered**, and
-  both need renumbering against the new 12 October start. Since there's no
+  both need renumbering against the actual start, now that the page shows
+  no date. Since there's no
   fixed end date, `Building.astro`'s three layers use generic "early/mid/
   final sessions" labels instead of specific session ranges — that's now
   the permanent phrasing, not a placeholder.
