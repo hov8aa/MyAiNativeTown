@@ -1,8 +1,7 @@
 ---
 import Button from "../Button.astro";
 
-const appFee = "₹500";
-const programFee = "₹1,00,000";
+const appFee = "₹1,000";
 const dmHref = "https://wa.me/917015330518?text=AGENT";
 const dmCta = `DM "AGENT" to know more`;
 ---
@@ -13,32 +12,35 @@ const dmCta = `DM "AGENT" to know more`;
       <p class="eyebrow">Register</p>
       <h2>10 seats. <span class="gold">Ek hi cohort.</span></h2>
       <p class="lead">
-        {appFee} gets you in the door. The {programFee} program fee is due
+        {appFee} covers registration and the notary for your agreement. The program fee is due
         only after you have a job offer of ₹3 LPA or more, payable as an
-        agreed share of salary in installments &mdash; {appFee} is the first
-        filter, and it is the only thing you pay before you're hired.
+        agreed share of salary in installments &mdash; {appFee} is the only
+        thing you pay before you're hired, and only after you've seen two
+        free sessions.
       </p>
       <div class="steps">
-        <p><span class="num">1</span>DM &ldquo;AGENT&rdquo; on WhatsApp.</p>
-        <p><span class="num">2</span>I reply within two working days with next steps and the joining link.</p>
-        <p><span class="num">3</span>Cohort 01 starts 12 October. Ten seats, first come first held.</p>
+        <p><span class="num">1</span>DM &ldquo;AGENT&rdquo; on WhatsApp, or call either number.</p>
+        <p><span class="num">2</span>Do the homework evaluation &mdash; a short voice interview and one written task. Doing it at all is the first filter.</p>
+        <p><span class="num">3</span>Attend two free sessions and build your first small agent before paying anything.</p>
+        <p><span class="num">4</span>Decide at the end of session 2: pay the {appFee}, sign the notarised agreement, take your seat. Ten seats, first come first held.</p>
       </div>
       <p class="footnote">
-        Questions before you apply? Write to me and say whether you're a
+        Questions before you apply? Message or call, and say whether you're a
         fresher or already working. Vague inputs get vague replies.
       </p>
     </div>
 
     <div class="card card-gold dm-card">
-      <p class="eyebrow">Apply on WhatsApp</p>
-      <p class="phone">+91 70153 30518</p>
+      <p class="eyebrow">Apply on WhatsApp or call</p>
+      <p class="phone"><a href="tel:+919728485250">+91 97284 85250</a></p>
+      <p class="phone"><a href="tel:+917015330518">+91 70153 30518</a></p>
       <p class="dm-lead">
         Message &ldquo;AGENT&rdquo; and tell me whether you're a fresher or
         already working, plus the shop, clinic or office you'd point an
         agent at first.
       </p>
       <Button size="lg" href={dmHref} class="dm-cta" data-cta="register">{dmCta}</Button>
-      <p class="fine">Opens WhatsApp. {appFee} application fee, and there is no waitlist once ten are in.</p>
+      <p class="fine">Opens WhatsApp on +91 70153 30518. {appFee} registration fee, paid only after the free sessions, and there is no waitlist once ten are in.</p>
     </div>
   </div>
 </section>
@@ -81,13 +83,15 @@ const dmCta = `DM "AGENT" to know more`;
   .dm-card { display: flex; flex-direction: column; }
 
   .phone {
-    margin: 0 0 16px;
+    margin: 0 0 8px;
     font-size: 1.75rem;
     font-weight: 700;
     color: var(--text-heading);
     letter-spacing: -0.01em;
     max-width: none;
   }
+  .phone a { color: inherit; text-decoration: none; }
+  .phone + .dm-lead { margin-top: 8px; }
 
   .dm-lead { font-size: 1rem; line-height: 1.55; margin: 0 0 28px; max-width: none; }
 
