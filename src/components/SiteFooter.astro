@@ -1,8 +1,12 @@
 ---
-import { copyFor } from "../i18n";
+import { copyFor, type Lang } from "../i18n";
+
+interface Props {
+  lang: Lang;
+}
 
 const dmHref = "https://wa.me/917015330518?text=AGENT";
-const t = copyFor(Astro.currentLocale).footer;
+const t = copyFor(Astro.props.lang).footer;
 ---
 
 <footer class="site-footer">

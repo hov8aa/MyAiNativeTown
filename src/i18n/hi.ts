@@ -25,6 +25,7 @@ const hi: Copy = {
       tracks: "किसके लिए",
       format: "फ़ॉर्मेट",
       register: "रजिस्टर",
+      journal: "जर्नल",
     },
     cta: "“AGENT” भेजें",
     languageLabel: "भाषा",

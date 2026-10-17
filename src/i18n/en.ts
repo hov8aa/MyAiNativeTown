@@ -21,6 +21,7 @@ const en = {
       tracks: "Who it’s for",
       format: "Format",
       register: "Register",
+      journal: "Journal",
     },
     cta: "DM “AGENT”",
     languageLabel: "Language",

@@ -1,0 +1,41 @@
+---
+import Base from "../../layouts/Base.astro";
+import { ordered } from "../../data/journal";
+---
+
+<Base
+  lang="en"
+  title="Journal — MyAiNativeTown"
+  description="The manifesto and documented experiments behind MyAiNativeTown, Bhiwani and Hisar."
+>
+  <section class="journal">
+    <div class="wrap">
+      <h1>Journal</h1>
+      <div class="list">
+        {ordered.map((p) => (
+          <a class="post card" href={`/journal/${p.slug}`}>
+            <div class="meta">
+              {p.pinned && <span class="pin">Pinned</span>}
+              <span>{p.label}</span>
+              <time datetime={p.date}>{p.dateLabel}</time>
+            </div>
+            <h2>{p.title}</h2>
+            <p>{p.excerpt}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .journal { padding: 72px 24px 96px; background: var(--surface-page); }
+  .journal .wrap { max-width: 860px; }
+  h1 { font-size: clamp(2.25rem, 5vw, 3.25rem); margin-bottom: 40px; }
+  .list { display: grid; gap: 20px; }
+  .post { display: block; text-decoration: none; padding: 28px; }
+  .post:hover { border-color: var(--border-gold-soft); }
+  .post h2 { color: var(--text-heading); margin: 12px 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.8125rem; color: var(--text-subtle); }
+  .pin { color: var(--gold-300); font-weight: 600; }
+</style>

@@ -1,26 +1,36 @@
 ---
 import Button from "./Button.astro";
-import { copyFor, langFrom, languages, pathFor, type Lang } from "../i18n";
+import { copyFor, languages, pathFor, type Lang } from "../i18n";
 
+interface Props {
+  lang: Lang;
+  // Only pages that exist in every language get the language switch.
+  localized: boolean;
+}
+
+const { lang, localized } = Astro.props;
 const dmHref = "https://wa.me/917015330518?text=AGENT";
-const lang = langFrom(Astro.currentLocale);
 const t = copyFor(lang).header;
+// English-only pages (the journal) link to "/", which Base.astro forwards to
+// the visitor's saved language.
+const home = localized ? pathFor(lang) : "/";
 ---
 
 <header class="site-header">
-  <a href="#top" class="brand">
+  <a href={home} class="brand">
     <span class="brand-name">My<span class="gold">Ai</span>NativeTown</span>
     <span class="brand-loc">{t.brandLoc}</span>
   </a>
   <nav aria-label="Primary">
-    <a href="#questions">{t.nav.questions}</a>
-    <a href="#building">{t.nav.building}</a>
-    <a href="#tracks">{t.nav.tracks}</a>
-    <a href="#format">{t.nav.format}</a>
-    <a href="#register">{t.nav.register}</a>
+    <a href={`${home}#questions`}>{t.nav.questions}</a>
+    <a href={`${home}#building`}>{t.nav.building}</a>
+    <a href={`${home}#tracks`}>{t.nav.tracks}</a>
+    <a href={`${home}#format`}>{t.nav.format}</a>
+    <a href={`${home}#register`}>{t.nav.register}</a>
+    <a href="/journal">{t.nav.journal}</a>
   </nav>
   <div class="actions">
-    <nav class="lang-switch" aria-label={t.languageLabel}>
+    {localized && <nav class="lang-switch" aria-label={t.languageLabel}>
       {(Object.keys(languages) as Lang[]).map((l) => (
         <a
           href={pathFor(l)}
@@ -32,7 +42,7 @@ const t = copyFor(lang).header;
           {languages[l]}
         </a>
       ))}
-    </nav>
+    </nav>}
     <Button size="sm" href={dmHref} data-cta="header">{t.cta}</Button>
   </div>
 </header>
