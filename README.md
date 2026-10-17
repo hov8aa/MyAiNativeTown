@@ -1,65 +1,106 @@
-# myainativetown.com
+# My AI Native Town
 
-Public site for the **AI Agent Training Program — Bhiwani / Hisar**.
+This repository is not a software that can be downloaded.
 
-Cohort 01: applications open. It starts with a homework evaluation and two
-free sessions; then ninety days of live sessions on alternate days (two
-hours each, mentor present) with daily self-learning and a log entry in
-between. Online + offline, in Bhiwani and Hisar. Twenty seats per town. ₹1,000 registration fee (registration plus the notary for
-the agreement); the program fee is due
-only once you're hired (a job offer, or self-employment/freelance/contract
-work, of ₹3 LPA or more), paid as an agreed share of salary in
-installments. Freshers track (the software development life cycle first, then you build
-agents again and again) and Experienced
-track (you own a piece of the town agent and ship it).
+It's an experiment with a manifesto and a vision to create a framework
+that empowers the ground zero.
 
-The program is built in public. So is this site.
+## The vision
 
-## Running it
+An effort to draft a framework that can be replicated across the country,
+in hundreds of thousands of centers, as an open source framework for anyone
+to copy and use.
 
-```bash
-npm install
-npm run dev      # http://localhost:4321
-npm run build    # static output in dist/
-```
+All of it, as an operating model.
 
-## How the page is put together
+## Why
 
-One file per topic. To change a section, open its file — you do not need to
-understand the rest. `Building`/`NotJustACourse` and `Format`/`Outcomes`/
-`DontJoin` render just their own column or card; `index.astro` groups them
-into the shared two- and three-column rows.
+It solves employability skills and the overall growth of the society.
 
-```
-src/
-  pages/index.astro          the page: imports and groups the sections
-  layouts/Base.astro         head, fonts, meta, site header/footer
-  styles/global.css          Agents Force tokens — navy/gold, Poppins
-  content/copy.md            the source copy, with open decisions logged
-  components/
-    Button.astro             the one CTA button — primary/secondary, sm/md/lg
-    SiteHeader.astro          sticky nav + header CTA
-    SiteFooter.astro          gold divider + GitHub/YouTube/LinkedIn
-    sections/
-      Hero.astro              headline + the offer in numbers
-      Questions.astro         the four region-specific questions
-      Building.astro          what we're building (paired with NotJustACourse)
-      NotJustACourse.astro
-      Tracks.astro            Freshers and Experienced
-      Format.astro            paired with Outcomes + DontJoin
-      Outcomes.astro          what you walk out with
-      DontJoin.astro
-      Register.astro          seats, dates, fee, the WhatsApp CTA
-      Closing.astro
-```
+Empowering gives them a skill set methodology to aspire to build for the
+long term, and for the people around them.
 
-## Before this goes live
+## From the manifesto
 
-- [ ] Exact venue addresses in Bhiwani and Hisar — to be shared later
-- [ ] Tools, platforms and detailed program content — to be shared soon
-- [ ] Point the domain at the deploy
+**Thesis.** An AI-native town is not a smart city with AI bolted on. It is a
+place whose core operating model, services, and local economy are redesigned
+around agents and frontier models, so that previously humanly impossible or
+economically unviable workflows become routine.
 
-The cohort's goal-oriented format (no fixed end date or session count) and
-the counselor-based payment flow (no online payment link) are intentional,
-not gaps — see `assets/documents/rag/` and the decisions log at the bottom
-of `src/content/copy.md`.
+The system does not wait for AI-native users. The system is the thing that
+makes them AI-native.
+
+And the system is built by people. The seed is here; the soil needs
+stirring. Discipline builds character; character builds culture.
+
+**Our definition of AI-native.** AI-native is not a type of user. It is a
+core foundation of the lifestyle: to think with artificial intelligence as a
+strong thinking partner.
+
+**The intrinsic intent.** To empower the core operating system and the
+culture around me. And if it all makes sense, replicate the process across
+the country.
+
+**Four simultaneous system failures this addresses**
+
+- **Architecture failure:** Information exists in heads, phone contacts,
+  word of mouth. No system holds it, reasons about it, or acts on it.
+- **Supply failure:** The information gap hides a capacity gap.
+- **Connection failure:** Everyone wants the same thing separately. Nothing
+  connects that desire into a system that can act on it.
+- **Aspiration failure:** A gap in aspirations, culture and daily
+  conversations compared with people at the frontier.
+
+**The response: labs for the ground zero.** Not lectures or theory, but
+mindsets and practical skills built through guided, disciplined experiments
+and AI-driven learning. Documented experimentation is the method.
+
+**Vision: Bhiwani in 2036.** Multiple million-dollar organisations running
+from here, empowering each other, the culture, the businesses and humanity
+at scale.
+
+**Assumptions**
+
+- Culture is the root constraint: the architecture, supply and connection
+  failures can only be fixed by people the labs develop.
+- "Aspiration failure" is a name for what I described; it rests on my lived
+  experience in Bhiwani, not on data.
+- Labs are the right first layer of an AI-native town, ahead of any platform
+  choice.
+- What works in Bhiwani can be replicated across the country.
+
+**Open questions**
+
+- How do you figure out the unit economics of something that has never
+  existed before?
+- What does cash flow look like in the early months of a system that nobody
+  asked for but everyone might need?
+- Can Salesforce serve as the platform to test and build the core of the
+  project in a way that scales?
+
+→ [Read the full manifesto](https://app.notion.com/p/hov8a/MyAINativeTown-com-the-Manifesto-3c0ff81e5adf81c38ea9ca5a1f8c668a)
+
+## The only proven hypothesis
+
+Disciplined, documented experiments with goals and iterations are the only
+proven hypothesis and architecture, with the philosophy of long-term vision.
+
+## Where it stands
+
+Ground zero: Bhiwani and Hisar.
+
+Cohort 001 is still being architected, formulated and designed.
+
+Eventually, you can take away. For now, watch it from the sidelines, because
+it is only a raw experiment. So I would not recommend copying anything, but
+you may take some inspiration.
+
+→ [myainativetown.com](https://myainativetown.com)
+
+## License
+
+The manifesto, framework and documentation are licensed under
+[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) — see [LICENSE](LICENSE).
+The website code is licensed under the [MIT License](LICENSE-CODE).
+
+© 2026 Hari Om Vashishtha @ Unfinished Innovations LLP
