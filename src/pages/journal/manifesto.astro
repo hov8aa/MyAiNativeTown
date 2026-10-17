@@ -1,0 +1,96 @@
+---
+import Base from "../../layouts/Base.astro";
+import { posts } from "../../data/journal";
+
+const post = posts.find((p) => p.slug === "manifesto")!;
+const notion =
+  "https://app.notion.com/p/hov8a/MyAINativeTown-com-the-Manifesto-3c0ff81e5adf81c38ea9ca5a1f8c668a";
+---
+
+<Base title="MyAINativeTown.com: the Manifesto" description={post.excerpt}>
+  <article class="article">
+    <div class="wrap">
+      <a class="back" href="/journal">&larr; Journal</a>
+      <div class="meta">
+        <span class="pin">Pinned</span>
+        <span>{post.label}</span>
+        <time datetime={post.date}>{post.dateLabel}</time>
+      </div>
+      <h1>MyAINativeTown.com: <span class="gold">the Manifesto</span></h1>
+      <hr class="divider-gold" />
+
+      <h2>Thesis</h2>
+      <p>An AI-native town is not a smart city with AI bolted on. It is a place whose core operating model, services, and local economy are redesigned around agents and frontier models, so that previously humanly impossible or economically unviable workflows become routine.</p>
+      <p>The system does not wait for AI-native users. The system is the thing that makes them AI-native.</p>
+      <p>And the system is built by people. The seed is here; the soil needs stirring. Discipline builds character; character builds culture. So the town&rsquo;s operating system starts with labs that empower the ground zero to learn and build.</p>
+
+      <h2>Our definition of AI-native</h2>
+      <blockquote>AI-native is not a type of user. It is a core foundation of the lifestyle: to think with artificial intelligence as a strong thinking partner. This is our methodology.</blockquote>
+
+      <h2>The intrinsic intent</h2>
+      <p>To empower the core operating system and the culture around me. And if it all makes sense, replicate the process across the country.</p>
+
+      <h2>Four simultaneous system failures this addresses</h2>
+      <p><strong>Architecture failure:</strong> Information exists in heads, phone contacts, word of mouth. No system holds it, reasons about it, or acts on it in real time. Informal coordination doesn&rsquo;t scale, doesn&rsquo;t learn, doesn&rsquo;t remember.</p>
+      <p><strong>Supply failure:</strong> The information gap hides a capacity gap. Even perfect matching fails if there aren&rsquo;t enough plumbers. People with adjacent skills exist but no system identifies, routes, or develops them.</p>
+      <p><strong>Connection failure:</strong> People want something better. Every household knows the informal system breaks. But this awareness is fragmented. Everyone wants the same thing separately. Nothing connects that desire into a system that can act on it.</p>
+      <p><strong>Aspiration failure:</strong> A gap in aspirations, culture and daily conversations compared with people at the frontier, who experiment with frontier intelligence and build ventures as a lifestyle. In a town spread over less than 25 km, people have not had the environment to think with an open mind.</p>
+
+      <h2>The response: labs for the ground zero</h2>
+      <p>Not lectures or theory, but mindsets and practical skills built through guided, disciplined experiments and AI-driven learning. Documented experimentation is the method. Students learn to build and sell, both, and earn while they learn by running live AI operations for local businesses. Agentforce is one type of agent the builders will learn to build, among others.</p>
+
+      <h2>Vision: Bhiwani in 2036</h2>
+      <p>Multiple million-dollar organisations running from here, empowering each other, the culture, the businesses and humanity at scale. The town recognised across the industry for its efforts from 2026 onward. AI, robotics and venture experimentation in my town &mdash; a Silicon Valley&ndash;style experiment home. The first proof: a few organisations operating at million-dollar scale, hiring experts remotely with Bhiwani as home.</p>
+
+      <h2>Phases</h2>
+      <p><strong>Phase 1:</strong> the minimal viable programme, to test the basic hypothesis and understand the ecosystem, then iterate towards the vision in this manifesto. A 90-day AI agent training cohort in Bhiwani and Hisar, 20 seats per batch. Its pay-after-hire model is only for testing, in collaboration with a third party, in this current version.</p>
+
+      <h2>Status</h2>
+      <ul>
+        <li>Domain purchased: myainativetown.com</li>
+        <li>Cohort 001 is still being architected, formulated and designed: 20 seats per batch, ₹1,000 application fee, ₹0 fees until hired.</li>
+      </ul>
+
+      <h2>Open questions</h2>
+      <ul>
+        <li>How do you figure out the unit economics of something that has never existed before?</li>
+        <li>What does cash flow look like in the early months of a system that nobody asked for but everyone might need?</li>
+        <li>Can Salesforce serve as the platform to test and build the core of the project in a way that scales?</li>
+      </ul>
+
+      <h2>Assumptions</h2>
+      <ul>
+        <li>Culture is the root constraint: the architecture, supply and connection failures can only be fixed by people the labs develop.</li>
+        <li>&ldquo;Aspiration failure&rdquo; is a name for what I described; it rests on my lived experience in Bhiwani, not on data.</li>
+        <li>Labs are the right first layer of an AI-native town, ahead of any platform choice.</li>
+        <li>What works in Bhiwani can be replicated across the country.</li>
+      </ul>
+
+      <hr class="divider-gold" />
+      <div class="links">
+        <a href={notion}>The living manifesto (Notion)</a>
+        <a href="https://github.com/hov8aa/MyAiNativeTown">The experiment on GitHub</a>
+      </div>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .article { padding: 56px 24px 96px; background: var(--surface-page); }
+  .article .wrap { max-width: 760px; }
+  .back { display: inline-block; margin-bottom: 24px; text-decoration: none; font-weight: 500; font-size: 0.875rem; }
+  .meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.8125rem; color: var(--text-subtle); margin-bottom: 16px; }
+  .pin { color: var(--gold-300); font-weight: 600; }
+  h1 { font-size: clamp(2.25rem, 5vw, 3.25rem); line-height: 1.08; margin-bottom: 32px; }
+  h2 { margin: 48px 0 16px; }
+  .divider-gold { margin: 32px 0; }
+  p, li { line-height: 1.7; }
+  ul { padding-left: 1.25em; color: var(--text-muted); max-width: var(--measure); }
+  li { margin-bottom: 0.5em; }
+  strong { color: var(--text-heading); }
+  blockquote {
+    margin: 0; padding: 4px 0 4px 20px; border-left: 3px solid var(--gold-400);
+    color: var(--text-body); font-size: 1.125rem; line-height: 1.6; max-width: var(--measure);
+  }
+  .links { display: flex; flex-wrap: wrap; gap: 24px; font-weight: 500; }
+</style>
