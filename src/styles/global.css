@@ -189,6 +189,19 @@ section { padding-block: 72px; }
 .btn-secondary { background: transparent; color: var(--gold-300); border-color: var(--border-gold-soft); }
 .btn-secondary:hover { background: var(--surface-gold-tint); border-color: var(--gold-400); color: var(--gold-300); }
 
+/* ---- Hindi pages (html lang="hi") ----
+   Name the Devanagari fallbacks explicitly, and open up line-height so the
+   matras above and below the line don't clip in the tight Latin headings.
+   Tracking breaks the shirorekha (the joining headline), so it's removed
+   everywhere — !important because the components set it in scoped styles. */
+html:lang(hi) body,
+html:lang(hi) :is(h1, h2, h3, .btn) { font-family: var(--font-devanagari); }
+html:lang(hi) * { letter-spacing: normal !important; }
+html:lang(hi) h1 { line-height: 1.32; }
+html:lang(hi) :is(h2, h3) { line-height: 1.38; }
+html:lang(hi) :is(.statement, .q) { line-height: 1.45; }
+html:lang(hi) :is(.eyebrow, .tag, .badge, .brand-loc) { font-size: 0.8125rem; }
+
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }

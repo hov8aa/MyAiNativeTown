@@ -1,0 +1,55 @@
+---
+import Base from "../layouts/Base.astro";
+import Hero from "./sections/Hero.astro";
+import Questions from "./sections/Questions.astro";
+import Building from "./sections/Building.astro";
+import NotJustACourse from "./sections/NotJustACourse.astro";
+import Tracks from "./sections/Tracks.astro";
+import Format from "./sections/Format.astro";
+import Outcomes from "./sections/Outcomes.astro";
+import DontJoin from "./sections/DontJoin.astro";
+import Register from "./sections/Register.astro";
+import Closing from "./sections/Closing.astro";
+import { copyFor } from "../i18n";
+
+const t = copyFor(Astro.currentLocale);
+---
+
+<Base title={t.meta.title} description={t.meta.description}>
+  <Hero />
+  <Questions />
+  <section id="building" class="row-building">
+    <div class="wrap grid-2">
+      <Building />
+      <NotJustACourse />
+    </div>
+  </section>
+  <Tracks />
+  <section id="format" class="row-format">
+    <div class="wrap grid-3">
+      <Format />
+      <Outcomes />
+      <DontJoin />
+    </div>
+  </section>
+  <Register />
+  <Closing />
+</Base>
+
+<style>
+  .row-building { background: var(--surface-canvas); }
+  .row-format { background: var(--surface-canvas); }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 48px;
+    align-items: start;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 24px;
+  }
+</style>

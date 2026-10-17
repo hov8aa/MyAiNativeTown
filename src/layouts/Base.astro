@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+import { copyFor, langFrom, languages, pathFor, defaultLang, type Lang } from "../i18n";
 
 interface Props {
   title: string;
@@ -11,13 +12,29 @@ interface Props {
 const { title, description } = Astro.props;
 // Each page canonicalises to its own URL (not always the homepage).
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
+const lang = langFrom(Astro.currentLocale);
+const t = copyFor(lang);
+const alternates = (Object.keys(languages) as Lang[]).map((l) => ({
+  lang: l,
+  href: new URL(pathFor(l), Astro.site).href,
+}));
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Honour a language picked earlier with the header switch (SiteHeader.astro).
+         Runs before analytics so a redirected visit isn't counted twice. -->
+    <script is:inline define:vars={{ lang, paths: { hi: pathFor("hi"), en: pathFor("en") } }}>
+      try {
+        var saved = localStorage.getItem('lang');
+        if (saved && saved !== lang && paths[saved]) {
+          location.replace(paths[saved] + location.search + location.hash);
+        }
+      } catch (e) {}
+    </script>
     <!-- Google tag (gtag.js) -->
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-S8P1T5LCQ8"></script>
     <script is:inline>
@@ -34,6 +51,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
         gtag('event', 'generate_lead', {
           method: 'whatsapp',
           cta_location: link.getAttribute('data-cta'),
+          language: document.documentElement.lang,
           transport_type: 'beacon'
         });
       });
@@ -45,15 +63,18 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:site_name" content="MyAiNativeTown" />
+    <meta property="og:locale" content={t.meta.ogLocale} />
     <meta property="og:image" content="https://myainativetown.com/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="MyAiNativeTown — AI Agent Training Program, Cohort 01, Bhiwani · Hisar" />
+    <meta property="og:image:alt" content={t.meta.ogImageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="https://myainativetown.com/og-image.png" />
     <link rel="canonical" href={canonicalURL} />
+    {alternates.map((a) => <link rel="alternate" hreflang={a.lang} href={a.href} />)}
+    <link rel="alternate" hreflang="x-default" href={new URL(pathFor(defaultLang), Astro.site).href} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preload" href="/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/poppins-700.woff2" as="font" type="font/woff2" crossorigin />

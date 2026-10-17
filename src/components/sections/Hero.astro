@@ -1,61 +1,45 @@
 ---
 import Button from "../Button.astro";
+import { copyFor } from "../../i18n";
 
-const appFee = "₹1,000";
 const dmHref = "https://wa.me/917015330518?text=AGENT";
-const dmCta = `DM "AGENT" to know more`;
+const copy = copyFor(Astro.currentLocale);
+const t = copy.hero;
 ---
 
 <section id="top" class="hero">
   <div class="wrap grid-2">
     <div>
-      <p class="eyebrow">AI Agent Training Program &middot; Cohort 01</p>
+      <p class="eyebrow">{t.eyebrow}</p>
       <h1>
-        Learn to build AI agents in 90 days.<br />
-        <span class="gold">Pay only when you&rsquo;re hired.</span>
+        {t.title}<br />
+        <span class="gold">{t.titleGold}</span>
       </h1>
-      <p class="hindi devanagari">पहले सीखो। फ़ीस नौकरी लगने के बाद।</p>
-      <p class="lead">
-        {appFee} covers registration and the notary for your agreement. The program fee is due
-        only after you have a job offer of ₹3 LPA or more, payable as an
-        agreed share of salary in installments. Twenty seats per town, online and
-        offline in Bhiwani and Hisar.
-      </p>
-      <p class="sub">
-        Engineer or not. For freshers and working professionals who want to
-        ship an agent instead of watching one more course. Just a laptop and
-        internet &mdash; join online, or in the room in Bhiwani and Hisar.
-      </p>
+      <p class:list={["echo", { devanagari: t.echo.lang === "hi" }]} lang={t.echo.lang}>{t.echo.text}</p>
+      <p class="lead">{t.lead}</p>
+      <p class="sub">{t.sub}</p>
       <div class="cta-row">
-        <Button size="lg" href={dmHref} data-cta="hero">{dmCta}</Button>
-        <Button size="lg" variant="secondary" href="#tracks">See who this is for</Button>
+        <Button size="lg" href={dmHref} data-cta="hero">{copy.dmCta}</Button>
+        <Button size="lg" variant="secondary" href="#tracks">{t.secondaryCta}</Button>
       </div>
-      <p class="fine">Cohort 01 applications are open &mdash; 20 seats per town. It starts with two free sessions; the {appFee} is paid only if you decide to join.</p>
+      <p class="fine">{t.fine}</p>
     </div>
 
     <div class="card card-gold offer">
-      <p class="eyebrow">The whole offer</p>
+      <p class="eyebrow">{t.offer.eyebrow}</p>
       <div class="stats">
-        <div class="stat">
-          <span class="stat-value">{appFee}</span>
-          <span class="stat-label">registration + notary</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value">₹0</span>
-          <span class="stat-label">fees until you&rsquo;re hired</span>
-        </div>
-        <div class="stat stat-gold">
-          <span class="stat-value">₹3&ndash;6 LPA</span>
-          <span class="stat-label">the roles you train for</span>
-        </div>
+        {t.offer.stats.map((stat, i) => (
+          <div class:list={["stat", { "stat-gold": i === t.offer.stats.length - 1 }]}>
+            <span class="stat-value">{stat.value}</span>
+            <span class="stat-label">{stat.label}</span>
+          </div>
+        ))}
       </div>
       <dl>
-        <div><dt>Starts with</dt><dd>Two free sessions</dd></div>
-        <div><dt>Seats</dt><dd>20 per town</dd></div>
-        <div><dt>Format</dt><dd>Online + offline &mdash; Bhiwani &middot; Hisar</dd></div>
+        {t.offer.facts.map((f) => <div><dt>{f.term}</dt><dd>{f.detail}</dd></div>)}
       </dl>
-      <Button size="lg" href={dmHref} class="offer-cta" data-cta="hero_offer">{dmCta}</Button>
-      <p class="fine">&ldquo;Hired&rdquo; means a job offer of ₹3 LPA or more &mdash; self-employment and freelance work earning ₹3 LPA or more count too. That&rsquo;s when the program fee is due, payable in installments. There is no recording; if you miss a session, you catch up from the build log like everyone else.</p>
+      <Button size="lg" href={dmHref} class="offer-cta" data-cta="hero_offer">{copy.dmCta}</Button>
+      <p class="fine">{t.offer.fine}</p>
     </div>
   </div>
 </section>
@@ -65,7 +49,7 @@ const dmCta = `DM "AGENT" to know more`;
 
   .grid-2 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
     gap: 56px;
     align-items: start;
   }
@@ -78,7 +62,7 @@ const dmCta = `DM "AGENT" to know more`;
 
   .devanagari { font-family: var(--font-devanagari); }
 
-  .hindi {
+  .echo {
     font-size: 1.0625rem;
     color: var(--text-subtle);
     margin: 0 0 20px;
