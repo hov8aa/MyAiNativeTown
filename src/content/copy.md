@@ -1,13 +1,32 @@
 # Enrollment page copy — source of truth
 
 The live page is built from this. Sections here map one-to-one onto the files
-in `src/components/sections/`.
+in `src/components/sections/`; the words themselves live in `src/i18n/hi.ts`
+(Hindi, served at `/`) and `src/i18n/en.ts` (English, at `/en/`). A copy
+change goes into both.
 
 Bracketed items are still open.
 
 ---
 
 ## Decisions log
+
+**Closed — Hindi is the default language (17 Oct 2026)**
+
+- The site is bilingual. Hindi is served at `/` and is what a first-time
+  visitor sees; English is at `/en/`. A हिन्दी | English switch sits in the
+  header, and the visitor's pick is remembered on their device.
+- Register follows `assets/documents/source/faq-hindi.md`: everyday Hindi
+  with the English words people here actually say (एजेंट, सेशन, फीस), "आप"
+  in body copy. "AGENT", the track names (Freshers / Experienced), LPA and
+  hypothesis/actions/expectations stay in Latin script, as in the FAQ.
+- The hero keeps its bilingual echo, flipped: the Hindi page shows the
+  English tagline under the headline; the English page still shows the
+  Devanagari one. The English page's Hinglish lines ("teen layers mein",
+  "Ek hi cohort", "Yeh aapke liye nahi hai") become Devanagari on the Hindi
+  page.
+- DM clicks now carry the page language in the `generate_lead` event, so
+  the Hindi-default decision can be checked against conversions.
 
 **Closed — evolved program details (13 Oct 2026, from the Cohort 01 banners)**
 

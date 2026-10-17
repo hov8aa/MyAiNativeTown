@@ -1,18 +1,19 @@
 ---
 import Button from "../Button.astro";
+import { copyFor } from "../../i18n";
 
 const dmHref = "https://wa.me/917015330518?text=AGENT";
-const dmCta = `DM "AGENT" to know more`;
+const copy = copyFor(Astro.currentLocale);
+const t = copy.closing;
 ---
 
 <section class="closing">
   <div class="wrap">
-    <p class="eyebrow">Before you decide</p>
+    <p class="eyebrow">{t.eyebrow}</p>
     <p class="statement">
-      You will spend ninety days pushing a real thing into a town that did
-      not ask for it. <span class="gold">Most of it will resist.</span>
+      {t.statement}<span class="gold">{t.statementGold}</span>
     </p>
-    <Button size="lg" href={dmHref} data-cta="closing">{dmCta}</Button>
+    <Button size="lg" href={dmHref} data-cta="closing">{copy.dmCta}</Button>
   </div>
 </section>
 

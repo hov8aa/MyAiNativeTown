@@ -1,17 +1,14 @@
 ---
-const reasons = [
-  "you want a certificate more than a working thing.",
-  "you cannot show up live every other day, and log your own work on the days in between, for ninety days.",
-  "you expect to be handed the goal instead of chasing it between sessions.",
-  "you need the recording, because there isn’t one.",
-];
+import { copyFor } from "../../i18n";
+
+const t = copyFor(Astro.currentLocale).dontJoin;
 ---
 
 <div class="card card-inset dontjoin">
-  <p class="eyebrow">Don&rsquo;t join if</p>
-  <h3>Yeh aapke liye nahi hai, agar &mdash;</h3>
+  <p class="eyebrow">{t.eyebrow}</p>
+  <h3>{t.title}</h3>
   <div class="lines">
-    {reasons.map((r) => <p>{r}</p>)}
+    {t.reasons.map((r) => <p>{r}</p>)}
   </div>
 </div>
 

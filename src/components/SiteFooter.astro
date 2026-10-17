@@ -1,12 +1,19 @@
 ---
+import { copyFor, type Lang } from "../i18n";
+
+interface Props {
+  lang: Lang;
+}
+
 const dmHref = "https://wa.me/917015330518?text=AGENT";
+const t = copyFor(Astro.props.lang).footer;
 ---
 
 <footer class="site-footer">
   <div class="wrap">
     <hr class="divider-gold" />
     <div class="row">
-      <span class="line">myainativetown.com &mdash; built in public, from Bhiwani. &copy;2026.</span>
+      <span class="line">{t.line}</span>
       <div class="links">
         <a href={dmHref} data-cta="footer">WhatsApp</a>
         <a href="https://github.com/hov8aa/MyAiNativeTown">GitHub</a>

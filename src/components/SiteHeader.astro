@@ -1,24 +1,60 @@
 ---
 import Button from "./Button.astro";
+import { copyFor, languages, pathFor, type Lang } from "../i18n";
 
+interface Props {
+  lang: Lang;
+  // Only pages that exist in every language get the language switch.
+  localized: boolean;
+}
+
+const { lang, localized } = Astro.props;
 const dmHref = "https://wa.me/917015330518?text=AGENT";
+const t = copyFor(lang).header;
+// English-only pages (the journal) link to "/", which Base.astro forwards to
+// the visitor's saved language.
+const home = localized ? pathFor(lang) : "/";
 ---
 
 <header class="site-header">
-  <a href="/" class="brand">
+  <a href={home} class="brand">
     <span class="brand-name">My<span class="gold">Ai</span>NativeTown</span>
-    <span class="brand-loc">Bhiwani &middot; Hisar</span>
+    <span class="brand-loc">{t.brandLoc}</span>
   </a>
   <nav aria-label="Primary">
-    <a href="/#questions">The questions</a>
-    <a href="/#building">What we build</a>
-    <a href="/#tracks">Who it&rsquo;s for</a>
-    <a href="/#format">Format</a>
-    <a href="/#register">Register</a>
-    <a href="/journal">Journal</a>
+    <a href={`${home}#questions`}>{t.nav.questions}</a>
+    <a href={`${home}#building`}>{t.nav.building}</a>
+    <a href={`${home}#tracks`}>{t.nav.tracks}</a>
+    <a href={`${home}#format`}>{t.nav.format}</a>
+    <a href={`${home}#register`}>{t.nav.register}</a>
+    <a href="/journal">{t.nav.journal}</a>
   </nav>
-  <Button size="sm" href={dmHref} data-cta="header">DM &ldquo;AGENT&rdquo;</Button>
+  <div class="actions">
+    {localized && <nav class="lang-switch" aria-label={t.languageLabel}>
+      {(Object.keys(languages) as Lang[]).map((l) => (
+        <a
+          href={pathFor(l)}
+          hreflang={l}
+          lang={l}
+          data-lang={l}
+          aria-current={l === lang ? "true" : undefined}
+        >
+          {languages[l]}
+        </a>
+      ))}
+    </nav>}
+    <Button size="sm" href={dmHref} data-cta="header">{t.cta}</Button>
+  </div>
 </header>
+
+<script is:inline>
+  // Remember the visitor's pick; Base.astro reads it on the next landing.
+  document.querySelectorAll('.lang-switch a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      try { localStorage.setItem('lang', a.getAttribute('data-lang')); } catch (e) {}
+    });
+  });
+</script>
 
 <style>
   .site-header {
@@ -74,4 +110,25 @@ const dmHref = "https://wa.me/917015330518?text=AGENT";
   }
 
   nav a:hover { color: var(--gold-200, #fbe3a2); }
+
+  .actions { display: flex; align-items: center; gap: 16px; }
+
+  .lang-switch {
+    gap: 0;
+    padding: 3px;
+    border: 1px solid var(--border-gold-soft);
+    border-radius: var(--radius-pill);
+  }
+
+  .lang-switch a {
+    padding: 5px 12px;
+    border-radius: var(--radius-pill);
+    font-size: 0.8125rem;
+    line-height: 1.4;
+  }
+
+  .lang-switch a[aria-current] {
+    background: var(--surface-gold-tint);
+    color: var(--gold-300);
+  }
 </style>

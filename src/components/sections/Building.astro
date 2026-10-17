@@ -1,30 +1,15 @@
 ---
-const layers = [
-  {
-    tag: "Layer 01 · Early sessions",
-    text: "The category walk. What the town actually asks for, written down before any model is touched.",
-    accent: "var(--gold-400)",
-  },
-  {
-    tag: "Layer 02 · Mid sessions",
-    text: "Tools, data and guardrails. The first wrong answer arrives here, and we keep it.",
-    accent: "var(--gold-500)",
-  },
-  {
-    tag: "Layer 03 · Final sessions",
-    text: "Into a real workflow, in one real shop or clinic. It moved the number, or it did not.",
-    accent: "var(--gold-600)",
-  },
-];
+import { copyFor } from "../../i18n";
+
+const t = copyFor(Astro.currentLocale).building;
+const accents = ["var(--gold-400)", "var(--gold-500)", "var(--gold-600)"];
+const layers = t.layers.map((layer, i) => ({ ...layer, accent: accents[i] }));
 ---
 
 <div class="building">
-  <p class="eyebrow">What we&rsquo;re building</p>
-  <h2>One town agent, <span class="gold">teen layers mein</span>.</h2>
-  <p class="deck">
-    Not nine demos. One agent for this district, built layer by layer in
-    front of you, with every wrong answer logged where you can read it.
-  </p>
+  <p class="eyebrow">{t.eyebrow}</p>
+  <h2>{t.title}<span class="gold">{t.titleGold}</span>{t.titleEnd}</h2>
+  <p class="deck">{t.deck}</p>
   <div class="layers">
     {layers.map((layer) => (
       <div class="layer" style={`border-left-color:${layer.accent}`}>

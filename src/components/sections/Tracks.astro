@@ -1,57 +1,35 @@
 ---
+import { copyFor } from "../../i18n";
+
+const t = copyFor(Astro.currentLocale).tracks;
+const tracks = [
+  { ...t.freshers, cardClass: "card track" },
+  { ...t.experienced, cardClass: "card card-gold track" },
+];
 ---
 
 <section id="tracks" class="tracks">
   <div class="wrap">
     <div class="head">
       <div>
-        <p class="eyebrow">Freshers and experienced, twenty seats per town</p>
-        <h2>Pick the one you can <span class="gold">actually finish</span>.</h2>
+        <p class="eyebrow">{t.eyebrow}</p>
+        <h2>{t.title}<span class="gold">{t.titleGold}</span>{t.titleEnd}</h2>
       </div>
-      <p class="deck">
-        Both tracks build. The difference is how much of the town agent you
-        own by the end of the ninety days.
-      </p>
+      <p class="deck">{t.deck}</p>
     </div>
     <div class="grid-2up">
-      <div class="card track">
-        <span class="badge">Freshers</span>
-        <h3>Foundations &mdash; and you still build.</h3>
-        <p class="body">
-          You first learn how software is made &mdash; the software
-          development life cycle &mdash; then how an agent is put together,
-          then you build agents again and again &mdash; each one small, each
-          one working &mdash; until building one is routine.
-        </p>
-        <p class="who">
-          Right if you're a final or pre-final year engineering student, or
-          a graduate of a 3- or 4-year degree program &mdash; new to this,
-          and want the ground under you before you carry weight.
-        </p>
-        <div class="walk">
-          <span>You walk out with</span>
-          <span class="ans">Agents you built, running</span>
+      {tracks.map((track) => (
+        <div class={track.cardClass}>
+          <span class="badge">{track.badge}</span>
+          <h3>{track.title}</h3>
+          <p class="body">{track.body}</p>
+          <p class="who">{track.who}</p>
+          <div class="walk">
+            <span>{t.walkLabel}</span>
+            <span class="ans">{track.walk}</span>
+          </div>
         </div>
-      </div>
-
-      <div class="card card-gold track">
-        <span class="badge">Experienced</span>
-        <h3>You own a piece of the town agent, and ship it.</h3>
-        <p class="body">
-          A named layer of the real thing is yours &mdash; a tool, a data
-          path, a guardrail. It goes live with your name on the commit, or
-          it does not go live.
-        </p>
-        <p class="who">
-          Right if you already build software and want something harder
-          than a tutorial. The homework evaluation before the free sessions
-          shows which track fits you. No age limit.
-        </p>
-        <div class="walk">
-          <span>You walk out with</span>
-          <span class="ans">A shipped layer in production</span>
-        </div>
-      </div>
+      ))}
     </div>
   </div>
 </section>

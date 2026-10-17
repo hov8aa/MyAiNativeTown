@@ -1,38 +1,20 @@
 ---
-const questions = [
-  {
-    tag: "Kirana & retail",
-    q: "Can an agent take the day’s udhaar off a shopkeeper’s notebook and onto his phone?",
-  },
-  {
-    tag: "Coaching institutes",
-    q: "Can it answer the same forty admission questions parents ask every evening — in Hindi?",
-  },
-  {
-    tag: "Forms & schemes",
-    q: "Can it tell someone which scheme they qualify for, and which four papers to carry?",
-  },
-  {
-    tag: "Clinics",
-    q: "Can it hold a clinic’s appointment book without the receptionist changing how she works?",
-  },
-];
+import { copyFor } from "../../i18n";
+
+const t = copyFor(Astro.currentLocale).questions;
 ---
 
 <section id="questions" class="questions">
   <div class="wrap">
     <div class="head">
       <div>
-        <p class="eyebrow">The four questions</p>
-        <h2>Answer one of these <span class="gold">in ninety days</span>.</h2>
+        <p class="eyebrow">{t.eyebrow}</p>
+        <h2>{t.title}<span class="gold">{t.titleGold}</span>{t.titleEnd}</h2>
       </div>
-      <p class="deck">
-        These are specific to Bhiwani and Hisar on purpose. Generic examples
-        kill the premise. The blank line is yours to fill.
-      </p>
+      <p class="deck">{t.deck}</p>
     </div>
     <div class="grid-4">
-      {questions.map((item) => (
+      {t.items.map((item) => (
         <div class="card qcard">
           <span class="tag">{item.tag}</span>
           <p class="q">{item.q}</p>
