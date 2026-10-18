@@ -33,8 +33,7 @@ const en = {
     titleGold: "Pay only when you’re hired.",
     // The banner's tagline, echoed in the other language.
     echo: { text: "पहले सीखो। फ़ीस नौकरी लगने के बाद।", lang: "hi" },
-    lead: `${appFee} covers registration and the notary for your agreement. The program fee is due only after you have a job offer of ₹3 LPA or more, payable as an agreed share of salary in installments. Twenty seats per town, online and offline in Bhiwani and Hisar.`,
-    sub: "Engineer or not. For freshers and working professionals who want to ship an agent instead of watching one more course. Just a laptop and internet — join online, or in the room in Bhiwani and Hisar.",
+    lead: "Engineer or not. If you want to build AI agents, there’s a seat for you.",
     secondaryCta: "See who this is for",
     fine: `Cohort 01 applications are open — 20 seats per town. It starts with two free sessions; the ${appFee} is paid only if you decide to join.`,
     offer: {
@@ -49,7 +48,7 @@ const en = {
         { term: "Seats", detail: "20 per town" },
         { term: "Format", detail: "Online + offline — Bhiwani · Hisar" },
       ],
-      fine: "“Hired” means a job offer of ₹3 LPA or more — self-employment and freelance work earning ₹3 LPA or more count too. That’s when the program fee is due, payable in installments. There is no recording; if you miss a session, you catch up from the build log like everyone else.",
+      fine: "Job offer of ₹3 LPA or more. Written agreement before you join.",
     },
   },
 

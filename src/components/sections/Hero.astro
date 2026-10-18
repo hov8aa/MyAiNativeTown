@@ -17,7 +17,6 @@ const t = copy.hero;
       </h1>
       <p class:list={["echo", { devanagari: t.echo.lang === "hi" }]} lang={t.echo.lang}>{t.echo.text}</p>
       <p class="lead">{t.lead}</p>
-      <p class="sub">{t.sub}</p>
       <div class="cta-row">
         <Button size="lg" href={dmHref} data-cta="hero">{copy.dmCta}</Button>
         <Button size="lg" variant="secondary" href="#tracks">{t.secondaryCta}</Button>
@@ -69,8 +68,7 @@ const t = copy.hero;
     max-width: none;
   }
 
-  .lead { font-size: 1.125rem; line-height: 1.55; color: var(--text-muted); margin: 0 0 12px; }
-  .sub { font-size: 0.9375rem; line-height: 1.55; color: var(--text-subtle); margin: 0 0 32px; }
+  .lead { font-size: 1.125rem; line-height: 1.55; color: var(--text-muted); margin: 0 0 32px; }
 
   .cta-row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
 
