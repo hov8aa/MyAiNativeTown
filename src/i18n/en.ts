@@ -174,7 +174,7 @@ const en = {
     titleGold: "Ek hi cohort.",
     lead: `${appFee} covers registration and the notary for your agreement. The program fee is due only after you have a job offer of ₹3 LPA or more, payable as an agreed share of salary in installments — ${appFee} is the only thing you pay before you’re hired, and only after you’ve seen two free sessions.`,
     steps: [
-      "DM “AGENT” on WhatsApp, or call either number.",
+      "DM “AGENT” on WhatsApp, or call +91 70153 30518.",
       "Do the homework evaluation — a short voice interview and one written task. Doing it at all is the first filter.",
       "Attend two free sessions and build your first small agent before paying anything.",
       `Decide at the end of session 2: pay the ${appFee}, sign the notarised agreement, take your seat. Twenty seats per town, first come first held.`,
@@ -194,7 +194,7 @@ const en = {
   },
 
   footer: {
-    line: "myainativetown.com — built in public, from Bhiwani. ©2026.",
+    line: "myainativetown.com — Unfinished Innovations LLP. ©2026.",
   },
 };
 

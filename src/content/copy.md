@@ -50,8 +50,7 @@ The banners are now the source of truth for public copy. This supersedes the
   development life cycle first. The homework evaluation decides the track;
   Experienced is no longer limited to working engineers who code
   ("Engineer or not").
-- **Two phone numbers:** +91 97284 85250 and +91 70153 30518. The WhatsApp
-  deep link stays on 70153 30518.
+- **One phone number:** +91 70153 30518, also the WhatsApp deep link.
 - Hero headline now reads "Learn to build…" and the Hindi line is the
   banner's: "पहले सीखो। फ़ीस नौकरी लगने के बाद।"
 - **Upfront fee is ₹1,000**, covering registration and the notary service
