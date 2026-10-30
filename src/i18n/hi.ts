@@ -189,6 +189,12 @@ const hi: Copy = {
     },
   },
 
+  instagram: {
+    eyebrow: "Instagram पर ताज़ा",
+    heading: "देखिए इस हफ़्ते शहर क्या बना रहा है।",
+    follow: "@myainativetown को फ़ॉलो करें",
+  },
+
   closing: {
     eyebrow: "फ़ैसला करने से पहले",
     statement: "आप नब्बे दिन एक असली चीज़ को ऐसे शहर में उतारने में लगाएँगे जिसने उसे माँगा ही नहीं। ",

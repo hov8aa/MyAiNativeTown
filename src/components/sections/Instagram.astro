@@ -1,0 +1,34 @@
+---
+import { copyFor } from "../../i18n";
+
+// Paste the link of the reel to feature, e.g. "https://www.instagram.com/reel/ABC123/".
+// Instagram has no "latest post" embed without its API, so swap this when a new reel goes up.
+// Left empty, the section shows only the follow link.
+const reelUrl = "";
+const profileUrl = "https://www.instagram.com/myainativetown";
+const t = copyFor(Astro.currentLocale).instagram;
+---
+
+<section id="instagram" class="instagram">
+  <div class="wrap">
+    <p class="eyebrow">{t.eyebrow}</p>
+    <h2>{t.heading}</h2>
+    {reelUrl && (
+      <div class="embed">
+        <blockquote class="instagram-media" data-instgrm-permalink={reelUrl} data-instgrm-version="14">
+          <a href={reelUrl}>{t.follow}</a>
+        </blockquote>
+        <script is:inline async src="https://www.instagram.com/embed.js"></script>
+      </div>
+    )}
+    <a class="follow" href={profileUrl}>{t.follow}</a>
+  </div>
+</section>
+
+<style>
+  .instagram { background: var(--surface-canvas); padding: 80px 24px; }
+  .instagram .wrap { max-width: 900px; text-align: center; }
+  .embed { display: flex; justify-content: center; margin: 32px 0; }
+  .embed :global(.instagram-media) { margin: 0 auto !important; max-width: 540px; width: 100%; }
+  .follow { font-weight: 500; }
+</style>
