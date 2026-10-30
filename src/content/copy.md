@@ -83,7 +83,9 @@ The banners are now the source of truth for public copy. This supersedes the
 - The Register lead-capture form (name/WhatsApp/college/track/textarea) is
   removed — it wasn't wired to anything. WhatsApp is the one funnel now;
   Register.astro's right column is a plain "Apply on WhatsApp" card instead.
-- YouTube: https://www.youtube.com/@AgentforceWithHov8a (footer link).
+- YouTube: https://www.youtube.com/@myainativetown (footer link).
+- LinkedIn: https://www.linkedin.com/in/hov8a/ (footer link).
+- Instagram: https://www.instagram.com/myainativetown (footer link + homepage reel section).
 - The header's decorative waveform graphic on the source pamphlet is
   confirmed purely decorative — no audio/testimonial to embed.
 

@@ -186,6 +186,12 @@ const en = {
     },
   },
 
+  instagram: {
+    eyebrow: "Latest on Instagram",
+    heading: "See what the town is building this week.",
+    follow: "Follow @myainativetown",
+  },
+
   closing: {
     eyebrow: "Before you decide",
     statement: "You will spend ninety days pushing a real thing into a town that did not ask for it. ",

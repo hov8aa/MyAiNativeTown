@@ -17,8 +17,9 @@ const t = copyFor(Astro.props.lang).footer;
       <div class="links">
         <a href={dmHref} data-cta="footer">WhatsApp</a>
         <a href="https://github.com/hov8aa/MyAiNativeTown">GitHub</a>
-        <a href="https://www.youtube.com/@AgentforceWithHov8a">YouTube</a>
-        <a href="#">LinkedIn</a>
+        <a href="https://www.youtube.com/@myainativetown">YouTube</a>
+        <a href="https://www.instagram.com/myainativetown">Instagram</a>
+        <a href="https://www.linkedin.com/in/hov8a/">LinkedIn</a>
       </div>
     </div>
   </div>
@@ -38,6 +39,6 @@ const t = copyFor(Astro.props.lang).footer;
 
   .line { font-size: 0.875rem; color: var(--text-subtle); }
 
-  .links { display: flex; gap: 24px; }
+  .links { display: flex; flex-wrap: wrap; gap: 12px 24px; }
   .links a { text-decoration: none; font-weight: 500; font-size: 0.875rem; }
 </style>
